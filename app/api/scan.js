@@ -1,22 +1,33 @@
-/* SlowDough — invoice / bank-statement scanner (Vercel serverless function)
+/* Financial TVM — invoice / receipt / bank-statement scanner.
+   Standalone Node HTTP service (systemd binky-financial-scan.service, 127.0.0.1:8082),
+   proxied by nginx at /financial/api/scan.
    POST { image: base64, mime: "image/jpeg" | "image/png" | "application/pdf" }
-   -> { items: [ { name, amount, freq:"monthly"|"once", dueDate?:"YYYY-MM-DD", dueDay?:1-31 } ] }
-   The Anthropic API key lives ONLY in the server env var ANTHROPIC_API_KEY. */
+   -> { items: [ { name, amount, freq:"monthly"|"once", dueDate?:"YYYY-MM-DD", dueDay?:1-31, confidence } ] }
+
+   Runs on the Link AI OAuth subscription (NOT metered API credits) — per Mike's hard rule
+   internal/pre-live tools call Claude via the OAuth token, so scans cost nothing extra.
+   Auth: Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN + header anthropic-beta: oauth-2025-04-20.
+   (No `tools` in the request, so the Claude-Code identity-block requirement does not apply.) */
+
+const http = require("http");
 
 const MODEL = process.env.SCAN_MODEL || "claude-haiku-4-5-20251001";
+const PORT = +process.env.SCAN_PORT || 8082;
+const OAUTH = process.env.ANTHROPIC_OAUTH_TOKEN || "";
 
-const PROMPT = `You are a finance assistant that extracts upcoming PAYMENTS the user needs to make, from a photo of an invoice/bill OR a bank e-statement.
+const PROMPT = `You are a finance assistant that extracts money items from a photo of an invoice/bill/receipt OR a bank e-statement, for a bookkeeping app.
 
 Return ONLY a JSON object, no prose, in exactly this shape:
 {"items":[{"name":string,"amount":number,"freq":"monthly"|"once","dueDate":"YYYY-MM-DD"|null,"dueDay":number|null,"confidence":"high"|"medium"|"low"}]}
 
 Rules:
-- "name": short payee/description (e.g. "Electricity - PLN", "Visa card", "Netflix").
-- "amount": the amount DUE as a plain number (no currency symbol, no thousands separators). Use the total/amount-due, not subtotals.
-- If a specific calendar due date is present, set "dueDate" (YYYY-MM-DD) and "freq":"once", leave "dueDay" null.
-- If it is clearly a recurring monthly bill with only a day-of-month, set "freq":"monthly" and "dueDay" (1-31), leave "dueDate" null.
-- For a bank statement, list distinct upcoming or recurring outgoing payments you can identify; ignore deposits/income and past one-off purchases that won't recur.
-- If you cannot find any payment, return {"items":[]}.
+- "name": short payee/description (e.g. "Electricity - PLN", "Villa Ann deposit", "Ace Hardware", "Netflix").
+- "amount": the amount as a plain number (no currency symbol, no thousands separators). Use the total / amount-due, not subtotals. Indonesian format "Rp 1.250.000" means 1250000.
+- Receipt already paid -> "freq":"once", "dueDate" = the receipt date (YYYY-MM-DD), "dueDay":null.
+- Invoice/bill with a specific due date -> "freq":"once", "dueDate" that date, "dueDay":null.
+- Recurring monthly bill with only a day-of-month -> "freq":"monthly", "dueDay" (1-31), "dueDate":null.
+- Bank statement -> list distinct outgoing payments you can identify; ignore deposits/income.
+- If you cannot find any item, return {"items":[]}.
 - Never invent amounts or dates. Use "confidence":"low" when unsure.`;
 
 function readBody(req) {
@@ -30,7 +41,6 @@ function readBody(req) {
 
 function extractJson(text) {
   if (!text) return { items: [] };
-  // Prefer a fenced or raw {...} block
   const objMatch = text.match(/\{[\s\S]*\}/);
   try {
     if (objMatch) {
@@ -39,7 +49,6 @@ function extractJson(text) {
       if (parsed && Array.isArray(parsed.items)) return parsed;
     }
   } catch (e) {}
-  // Fallback: a bare array
   const arrMatch = text.match(/\[[\s\S]*\]/);
   try {
     if (arrMatch) return { items: JSON.parse(arrMatch[0]) };
@@ -47,51 +56,54 @@ function extractJson(text) {
   return { items: [] };
 }
 
-module.exports = async (req, res) => {
-  // CORS (same-origin in practice; harmless to allow)
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "content-type");
-  if (req.method === "OPTIONS") return res.status(200).end();
-  if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
-
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) return res.status(500).json({ error: "Server is missing ANTHROPIC_API_KEY. Add it in Vercel project settings." });
+async function handle(req, res) {
+  const send = (code, obj) => {
+    res.writeHead(code, { "content-type": "application/json", "access-control-allow-origin": "*" });
+    res.end(JSON.stringify(obj));
+  };
+  if (req.method === "OPTIONS") { res.writeHead(200); return res.end(); }
+  if (req.method !== "POST") return send(405, { error: "POST only" });
+  if (!OAUTH) return send(500, { error: "Server missing ANTHROPIC_OAUTH_TOKEN" });
 
   let body;
-  try {
-    body = JSON.parse((await readBody(req)) || "{}");
-  } catch (e) {
-    return res.status(400).json({ error: "Invalid JSON body" });
-  }
+  try { body = JSON.parse((await readBody(req)) || "{}"); }
+  catch (e) { return send(400, { error: "Invalid JSON body" }); }
 
   const { image, mime } = body;
-  if (!image) return res.status(400).json({ error: "No image provided" });
+  if (!image) return send(400, { error: "No image provided" });
 
   const isPdf = (mime || "").includes("pdf");
-  const source = isPdf
-    ? { type: "base64", media_type: "application/pdf", data: image }
-    : { type: "base64", media_type: mime || "image/jpeg", data: image };
+  const source = { type: "base64", media_type: isPdf ? "application/pdf" : (mime || "image/jpeg"), data: image };
   const block = isPdf ? { type: "document", source } : { type: "image", source };
 
+  const payload = JSON.stringify({
+    model: MODEL,
+    max_tokens: 1500,
+    // OAuth-subscription endpoint requires the Claude Code identity as the first system block.
+    system: [{ type: "text", text: "You are Claude Code, Anthropic's official CLI for Claude." }],
+    messages: [{ role: "user", content: [{ type: "text", text: PROMPT }, block] }],
+  });
   try {
-    const r = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "x-api-key": key,
-        "anthropic-version": "2023-06-01",
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 1500,
-        messages: [{ role: "user", content: [{ type: "text", text: PROMPT }, block] }],
-      }),
-    });
-    const data = await r.json();
-    if (!r.ok) {
-      return res.status(502).json({ error: (data && data.error && data.error.message) || "AI service error" });
+    // The subscription is shared with our Claude Code sessions, so brief 429s happen when it's
+    // saturated. Retry a few times with backoff so an occasional collision recovers transparently.
+    let r, data;
+    for (let attempt = 0; attempt < 4; attempt++) {
+      r = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "authorization": "Bearer " + OAUTH,
+          "anthropic-version": "2023-06-01",
+          "anthropic-beta": "oauth-2025-04-20",
+        },
+        body: payload,
+      });
+      data = await r.json();
+      if (r.status !== 429) break;
+      await new Promise((res) => setTimeout(res, 1500 * (attempt + 1)));
     }
+    if (r.status === 429) return send(429, { error: "AI is busy right now (rate limit). Please try again in a moment." });
+    if (!r.ok) return send(502, { error: (data && data.error && data.error.message) || ("AI service error " + r.status) });
     const text = (data.content || []).map((c) => c.text || "").join("");
     const parsed = extractJson(text);
     const items = (parsed.items || [])
@@ -104,8 +116,12 @@ module.exports = async (req, res) => {
         dueDay: it.dueDay ? Math.max(1, Math.min(31, Number(it.dueDay))) : null,
         confidence: it.confidence || "medium",
       }));
-    return res.status(200).json({ items });
+    return send(200, { items });
   } catch (e) {
-    return res.status(500).json({ error: String((e && e.message) || e) });
+    return send(500, { error: String((e && e.message) || e) });
   }
-};
+}
+
+http.createServer((req, res) => {
+  handle(req, res).catch((e) => { try { res.writeHead(500); res.end(JSON.stringify({ error: String(e) })); } catch (_) {} });
+}).listen(PORT, "127.0.0.1", () => console.log("scan service on 127.0.0.1:" + PORT + " model=" + MODEL));

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>💰 Financial TVM</title>
 <meta name="description" content="Financial TVM — track business and personal money in one place. Villas, investors and construction tracking, synced securely across your devices." />
-<meta name="theme-color" content="#EE853F" />
+<meta name="theme-color" content="#0F6E56" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content="Financial TVM" />
@@ -14,18 +14,17 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%9E%3C/text%3E%3C/svg%3E" />
 <style>
 :root{
-  /* ezBookkeeping-faithful light theme: neutral off-white page, white cards, warm-orange accent */
-  --bg:#F3F3F1; --surface:#FFFFFF; --surface-2:#F1F1EF; --ink:#28282C; --ink-soft:#7B7B84;
-  --line:#EAEAE6; --brand:#EE853F; --brand-soft:#FCECDC; --brand-ink:#C25E1E;
-  --accent:#F0913F; --accent-soft:#FCEEE0; --danger:#DE5B47; --danger-soft:#FBE7E2;
-  --good:#3E9C86; --warn:#D9A32E; --shadow:0 4px 16px rgba(30,30,40,.06);
-  --radius:16px; --radius-sm:12px; --maxw:1280px;
+  --bg:#FAF8F4; --surface:#FFFFFF; --surface-2:#F4F1EB; --ink:#23201B; --ink-soft:#6F6A60;
+  --line:#E7E1D6; --brand:#0F6E56; --brand-soft:#E3F0EA; --brand-ink:#0B5743;
+  --accent:#E08A3C; --accent-soft:#FBEBDB; --danger:#C5503B; --danger-soft:#FAE5E0;
+  --good:#2E8B6F; --warn:#C99A2E; --shadow:0 6px 24px rgba(40,33,20,.07);
+  --radius:18px; --radius-sm:12px; --maxw:1280px;
 }
 [data-theme="dark"]{
-  --bg:#15161A; --surface:#1E1F24; --surface-2:#26272D; --ink:#ECEDF2; --ink-soft:#A0A1AC;
-  --line:#31323A; --brand:#F0955A; --brand-soft:#3A2717; --brand-ink:#F1B98C;
-  --accent:#F0A05A; --accent-soft:#33281c; --danger:#E5795F; --danger-soft:#352019;
-  --good:#5fcaa6; --warn:#dcb454; --shadow:0 8px 28px rgba(0,0,0,.4);
+  --bg:#16140F; --surface:#211E18; --surface-2:#2A261F; --ink:#F2EDE3; --ink-soft:#A8A193;
+  --line:#34302a; --brand:#4FC4A0; --brand-soft:#1d322b; --brand-ink:#8fe0c6;
+  --accent:#E8A05A; --accent-soft:#33281c; --danger:#E0795F; --danger-soft:#352019;
+  --good:#5fcaa6; --warn:#dcb454; --shadow:0 8px 28px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0}
@@ -98,7 +97,7 @@ main.content{flex:1;min-width:0}
 .hero-val.neg{color:var(--danger)} .hero-val.pos{color:var(--brand-ink)}
 @media(max-width:520px){.hero-val{font-size:30px}}
 /* green hero (reference look) */
-.greenhero{background:linear-gradient(135deg,#C67E48,#A5622C);color:#fff;border:none;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.greenhero{background:linear-gradient(135deg,#0F6E56,#0B5743);color:#fff;border:none;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
 .greenhero .ghl{font-size:12.5px;opacity:.82;font-weight:600}
 .greenhero .ghbig{font-size:38px;font-weight:800;letter-spacing:-.03em;margin:3px 0 14px;line-height:1.05}
 .greenhero .ghbig.neg{color:#ffd9d0}
@@ -279,74 +278,6 @@ main.content{flex:1;min-width:0}
 .right{margin-left:auto}
 hr{border:none;border-top:1px solid var(--line);margin:16px 0}
 .tag{font-size:11px;padding:2px 7px;border-radius:6px;background:var(--surface-2);color:var(--ink-soft);font-weight:600}
-/* ===== ezbookkeeping-style additions (shared classes, use these; avoids CSS conflicts) ===== */
-.tag-chip{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:999px;background:var(--brand-soft,#e8f2ee);color:var(--brand-ink,#0a5c43);font-weight:600;margin:2px 4px 2px 0}
-.tag-input-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.seg.tri button{flex:1}
-.seg .on.tf{background:var(--brand,#0a5c43);color:#fff}
-.day-group{margin-top:14px}
-.day-head{display:flex;justify-content:space-between;align-items:center;padding:6px 4px;font-size:12px;font-weight:700;color:var(--ink-soft);border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface)}
-.day-head .net{font-weight:700}
-.tx-line{display:flex;align-items:center;gap:11px;padding:10px 4px;border-bottom:1px solid var(--line)}
-.tx-line .tx-ic{font-size:20px;width:30px;text-align:center}
-.tx-line .tx-main{flex:1;min-width:0}
-.tx-line .tx-t{font-weight:600;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tx-line .tx-s{font-size:12px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tx-line .tx-amt{font-weight:700;font-size:14.5px;white-space:nowrap;text-align:right}
-.tx-amt.inc{color:var(--good,#0a7d55)}.tx-amt.exp{color:var(--danger,#c0392b)}.tx-amt.tf{color:var(--ink-soft)}
-.filterbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
-.filterbar select,.filterbar input{padding:7px 9px;font-size:13px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink)}
-.chip-row{display:flex;flex-wrap:wrap;gap:6px}
-.chip{font-size:12px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);font-weight:600;cursor:pointer}
-.chip.on{background:var(--brand,#0a5c43);color:#fff;border-color:var(--brand,#0a5c43)}
-/* ezbookkeeping-style Overview period cards + asset summary */
-.period-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
-.period-card{border:1px solid var(--line);border-radius:14px;padding:12px 13px;background:var(--surface)}
-.period-card .pc-h{display:flex;align-items:center;gap:7px;font-weight:700;font-size:13.5px;color:var(--ink)}
-.period-card .pc-d{font-size:11px;color:var(--ink-soft);margin:2px 0 8px}
-.period-card .pc-row{display:flex;justify-content:space-between;font-size:13px;margin-top:3px}
-.period-card .pc-in{color:var(--good,#0a7d55);font-weight:700}
-.period-card .pc-out{color:var(--danger,#c0392b);font-weight:700}
-.asset-sum{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
-.asset-sum .as-b{text-align:center;padding:8px 4px;border-radius:12px;background:var(--surface-2)}
-.asset-sum .as-l{font-size:10.5px;color:var(--ink-soft);font-weight:600}
-.asset-sum .as-v{font-size:14px;font-weight:800;margin-top:2px}
-
-/* ===== ezBookkeeping-faithful Overview (Month-Expense summary + Asset Summary + period cards + trends) ===== */
-.ez-topgrid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:16px}
-@media(min-width:760px){.ez-topgrid{grid-template-columns:1.15fr 1fr}}
-/* Month-expense summary card — soft cream with a hand-drawn doodle, like ezBook */
-.ez-expcard{position:relative;overflow:hidden;background:linear-gradient(135deg,#FBEEDD,#F4E6D2);border:1px solid #EFE0C9;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px}
-[data-theme="dark"] .ez-expcard{background:linear-gradient(135deg,#332617,#2a1f13);border-color:#3a2b18}
-.ez-expcard .ez-doodle{position:absolute;top:14px;right:16px;font-size:40px;opacity:.9;line-height:1}
-.ez-expcard .ez-mlabel{font-size:15px;font-weight:800;color:var(--brand-ink);letter-spacing:-.01em}
-.ez-expcard .ez-mlabel small{font-weight:600;color:var(--ink-soft);font-size:12.5px;margin-left:6px}
-.ez-expcard .ez-mbig{font-size:34px;font-weight:800;letter-spacing:-.03em;margin:8px 0 2px;color:var(--ink);line-height:1.05}
-.ez-expcard .ez-msub{font-size:13px;color:var(--ink-soft);margin-bottom:16px}
-.ez-expcard .ez-msub b{color:var(--good)}
-.ez-expcard .btn.sm{display:inline-flex;width:auto;margin-top:0}
-@media(max-width:520px){.ez-expcard .ez-mbig{font-size:28px}}
-/* Asset Summary card — assets / liabilities / net, 3 mini stats with icons */
-.ez-asset .ez-a-h{font-size:16px;font-weight:800;letter-spacing:-.01em}
-.ez-asset .ez-a-sub{font-size:12.5px;color:var(--ink-soft);margin:3px 0 12px}
-.ez-asset .ez-a-row{display:flex;align-items:center;gap:11px;padding:9px 0;border-top:1px solid var(--line)}
-.ez-asset .ez-a-row:first-of-type{border-top:none}
-.ez-asset .ez-a-ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:16px;background:var(--surface-2);flex:none}
-.ez-asset .ez-a-l{flex:1;font-size:13.5px;color:var(--ink-soft);font-weight:600}
-.ez-asset .ez-a-v{font-size:16px;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
-.ez-asset .ez-a-v.pos{color:var(--good)} .ez-asset .ez-a-v.neg{color:var(--danger)}
-/* Period cards — 4 across on desktop, 2 on mobile */
-.ez-periods{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
-@media(min-width:760px){.ez-periods{grid-template-columns:repeat(4,1fr)}}
-.ez-pcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px 16px}
-.ez-pcard .ep-h{display:flex;align-items:center;gap:7px;font-weight:700;font-size:14px}
-.ez-pcard .ep-d{font-size:11px;color:var(--ink-soft);margin:3px 0 11px}
-.ez-pcard .ep-row{display:flex;align-items:center;justify-content:space-between;font-size:13px;margin-top:6px}
-.ez-pcard .ep-row .k{color:var(--ink-soft);display:flex;align-items:center;gap:6px}
-.ez-pcard .ep-in{color:var(--good);font-weight:800}
-.ez-pcard .ep-out{color:var(--danger);font-weight:800}
-.ez-pcard .ep-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-.ez-pcard .ep-dot.i{background:var(--good)} .ez-pcard .ep-dot.o{background:var(--danger)}
 </style>
 </head>
 <body>
@@ -375,7 +306,6 @@ hr{border:none;border-top:1px solid var(--line);margin:16px 0}
       <div class="spacer"></div>
       <button class="icon-btn" id="moreBtn" title="More">☰</button>
       <button class="icon-btn" id="quickAdd" title="Quick add">＋</button>
-      <button class="icon-btn" id="syncBtn" title="Sync from cloud">↻</button>
       <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
     </div>
   </header>
@@ -427,14 +357,7 @@ const DEFAULT_CATS = [
 function freshState(){
   return {
     onboarded:false,
-    settings:{ name:"", currency:"Rp", currencyPos:"before", monthlyIncome:0, theme:"light", eurRate:20382 },
-    accounts:[       // {id,name,currency('IDR'|'EUR'),amount,_m} — real cash per bank; balance = sum (EUR×eurRate)
-      {id:"acc_wise",name:"Wise",currency:"EUR",amount:4200},
-      {id:"acc_cash",name:"Cash",currency:"IDR",amount:30000000},
-      {id:"acc_bca",name:"BCA",currency:"IDR",amount:0},
-      {id:"acc_permata",name:"Permata",currency:"IDR",amount:58000000},
-      {id:"acc_cimb",name:"CIMB Niaga",currency:"IDR",amount:125000000},
-    ],
+    settings:{ name:"", currency:"Rp", currencyPos:"before", monthlyIncome:0, theme:"light" },
     categories:JSON.parse(JSON.stringify(DEFAULT_CATS)),
     transactions:[], // {id,date,type,amount,catId,note}
     bills:[],        // {id,name,amount,dueDay,catId,paid:{'2026-06':true}}
@@ -448,9 +371,9 @@ function freshState(){
   };
 }
 // merge-keys that are arrays of {id,...} records
-const ARR_KEYS=["categories","transactions","bills","goals","debts","villas","investors","furniture","accounts"];
+const ARR_KEYS=["categories","transactions","bills","goals","debts","villas","investors","furniture"];
 function touch(o){ if(o) o._m=Date.now(); return o; }
-function tomb(id){ state._del=state._del||{}; state._del[id]=(typeof stampNow==='function'?stampNow():Date.now()); }
+function tomb(id){ state._del=state._del||{}; state._del[id]=Date.now(); }
 let state = load();
 function load(){
   try{const r=JSON.parse(localStorage.getItem(STORE_KEY));const st=r?{...freshState(),...r}:freshState();if(st.settings&&st.settings.currency==="$")st.settings.currency="Rp";return st;}
@@ -482,18 +405,13 @@ function mergeStates(a,b){
   const pa=a.project,pb=b.project;
   out.project = (pb&&(+pb._m||0)>(+(pa&&pa._m)||0)) ? pb : (pa||pb||null);
   out.onboarded = !!(a.onboarded||b.onboarded);
-  // keep the monotonic clock ahead of anything merged in, so local edits keep winning
-  let mx=Math.max(+a._clk||0,+b._clk||0);
-  ARR_KEYS.forEach(k=>(out[k]||[]).forEach(r=>{ if(r&&(+r._m||0)>mx) mx=+r._m; }));
-  if((+((out.settings||{})._m)||0)>mx) mx=+out.settings._m;
-  out._clk=mx;
   return normCur(out);
 }
 let _cloudT=null;
 function cloudPush(){ clearTimeout(_cloudT); _cloudT=setTimeout(async()=>{
   try{
     const r=await fetch(CLOUD,{headers:{"x-sd-token":CLOUD_TOKEN}});
-    if(r.ok){ const d=await r.json(); if(d&&d.state){ state=mergeStates(state,d.state); saveLocalOnly(); if(typeof render==="function") render(); } }
+    if(r.ok){ const d=await r.json(); if(d&&d.state){ state=mergeStates(state,d.state); saveLocalOnly(); } }
   }catch(e){}
   fetch(CLOUD,{method:"PUT",headers:{"content-type":"application/json","x-sd-token":CLOUD_TOKEN},body:JSON.stringify({state,ts:Date.now()})}).catch(()=>{});
 },800); }
@@ -536,9 +454,6 @@ function monthTotals(mk){
   const expense=sum(tx.filter(t=>t.type==="expense"),t=>+t.amount);
   return {income,expense,net:income-expense};
 }
-/* income/expense totals for a date range (inclusive ISO strings), trackers + transfers excluded */
-function periodTotals(fromISO,toISO){const tr=trackerIds();const tx=state.transactions.filter(t=>!tr.has(t.catId)&&t.date>=fromISO&&t.date<=toISO);return {income:sum(tx.filter(t=>t.type==="income"),t=>+t.amount),expense:sum(tx.filter(t=>t.type==="expense"),t=>+t.amount)};}
-function isoAddDays(iso,d){const dt=new Date(iso+"T00:00");dt.setDate(dt.getDate()+d);return dt.toISOString().slice(0,10);}
 function spendByCat(mk){
   const m={};
   txInMonth(mk).filter(t=>t.type==="expense").forEach(t=>{m[t.catId]=(m[t.catId]||0)+ +t.amount;});
@@ -548,83 +463,29 @@ function spendByCat(mk){
 function allTimeTotals(){const tr=trackerIds();const tx=state.transactions.filter(t=>!tr.has(t.catId));return {income:sum(tx.filter(t=>t.type==="income"),t=>+t.amount),expense:sum(tx.filter(t=>t.type==="expense"),t=>+t.amount)};}
 function ytdTotals(yr){const tr=trackerIds();const tx=state.transactions.filter(t=>!tr.has(t.catId)&&t.date.slice(0,4)===String(yr));return {income:sum(tx.filter(t=>t.type==="income"),t=>+t.amount),expense:sum(tx.filter(t=>t.type==="expense"),t=>+t.amount)};}
 function investorTotals(){const c=sum(state.investors||[],x=>+x.contributed||0),r=sum(state.investors||[],x=>+x.repaid||0);return {contributed:c,repaid:r,outstanding:c-r};}
-/* real-cash balance = sum of bank accounts, EUR converted via settings.eurRate */
-function eurRate(){return +((state.settings||{}).eurRate)||20382;}
-function accountsTotalIDR(){return sum(state.accounts||[],a=>(+a.amount||0)*(a.currency==="EUR"?eurRate():1));}
-function hasAccounts(){return !!(state.accounts&&state.accounts.length);}
-/* monotonic timestamp: always beats anything already in local state, so a device with a
-   slightly-behind clock still produces a WINNING _m for the merge (fixes edits reverting). */
-function stampNow(){ const t=Math.max(Date.now(),(+state._clk||0)+1); state._clk=t; return t; }
-/* apply/reverse a transaction's effect on its linked bank account. tx amounts are in base Rp;
-   convert to the account's currency (EUR accounts). sign=+1 apply, sign=-1 reverse. */
-function acctDelta(acctId,type,amount,sign){
-  if(!acctId) return; const a=(state.accounts||[]).find(x=>x.id===acctId); if(!a) return;
-  const amt=(+amount||0)/(a.currency==='EUR'?eurRate():1);
-  a.amount=(+a.amount||0)+((type==='income'?1:-1)*amt*sign); a._m=stampNow();
-}
-function acctOptions(sel){ return (state.accounts||[]).map(a=>`<option value="${a.id}" ${sel===a.id?'selected':''}>${esc(a.name)}${a.currency==='EUR'?' (EUR)':''}</option>`).join(""); }
-/* ===== ezbookkeeping contract helpers (shared spine — pages build against these) ===== */
-/* TRANSFER: move money between two own accounts. sign=+1 apply (from-=,to+=), -1 reverse. EUR-converted per account. Transfers never count as income/expense (totals filter by type). */
-function applyTransfer(fromId,toId,amount,sign){
-  const amt=+amount||0;
-  if(fromId){const a=(state.accounts||[]).find(x=>x.id===fromId); if(a){a.amount=(+a.amount||0)-(amt/(a.currency==='EUR'?eurRate():1))*sign; a._m=stampNow();}}
-  if(toId){const b=(state.accounts||[]).find(x=>x.id===toId); if(b){b.amount=(+b.amount||0)+(amt/(b.currency==='EUR'?eurRate():1))*sign; b._m=stampNow();}}
-}
-/* TWO-LEVEL CATEGORIES: a category with parentId is a subcategory. */
-function topCats(type){return state.categories.filter(c=>!c.parentId&&(!type||c.type===type));}
-function childCats(pid){return state.categories.filter(c=>c.parentId===pid);}
-function catParentOf(id){const c=state.categories.find(x=>x.id===id); return c&&c.parentId?state.categories.find(x=>x.id===c.parentId):null;}
-function catRollupId(id){const p=catParentOf(id); return p?p.id:id;} /* for reports rollup */
-/* TAGS: transactions carry an optional tags:[] array. */
-function allTags(){const s=new Set(); state.transactions.forEach(t=>(t.tags||[]).forEach(g=>{if(g)s.add(g);})); return [...s].sort();}
-function tagChips(tags){return (tags||[]).map(g=>`<span class="tag-chip">${esc(g)}</span>`).join("");}
-/* transfer display label e.g. "Wise → CIMB" */
-function transferLabel(t){const f=(state.accounts||[]).find(a=>a.id===t.acctId),to=(state.accounts||[]).find(a=>a.id===t.toAcctId);return `${f?esc(f.name):'?'} → ${to?esc(to.name):'?'}`;}
 function villaTagTotals(vid){const tx=state.transactions.filter(t=>t.villaId===vid);return {inc:sum(tx.filter(t=>t.type==="income"),t=>+t.amount), exp:sum(tx.filter(t=>t.type==="expense"),t=>+t.amount)};}
 function villaRows(){return (state.villas||[]).map(v=>{const tg=villaTagTotals(v.id);const income=(+v.income||0)+tg.inc;const expense=(+v.expense||0)+tg.exp;return {...v,income,expense,net:income-expense};});}
 function villaOptions(sel){return `<option value="">— No villa —</option>`+(state.villas||[]).map(v=>`<option value="${v.id}" ${sel===v.id?'selected':''}>${v.emoji||'🏠'} ${esc(v.name)}</option>`).join("");}
-function villaTx(vid){return state.transactions.filter(t=>t.villaId===vid).sort((a,b)=>b.date.localeCompare(a.date)||(b._m||0)-(a._m||0));}
-function villaCatSpend(vid){const m={};state.transactions.filter(t=>t.villaId===vid&&t.type==="expense").forEach(t=>{m[t.catId]=(m[t.catId]||0)+ +t.amount;});return Object.entries(m).map(([id,val])=>({cat:catById(id),id,val})).sort((a,b)=>b.val-a.val);}
-function acctTx(aid){return state.transactions.filter(t=>t.acctId===aid).sort((a,b)=>b.date.localeCompare(a.date)||(b._m||0)-(a._m||0));}
-/* ---- analytics ranges ---- */
-function lastNMonths(n){const arr=[];const now=new Date();for(let i=n-1;i>=0;i--){const d=new Date(now.getFullYear(),now.getMonth()-i,1);arr.push(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`);}return arr;}
-function trendData(n){return lastNMonths(n).map(mk=>({mk,...monthTotals(mk)}));}
-function balanceTrend(n){
-  const data=trendData(n);
-  const at=allTimeTotals(); const endBal=hasAccounts()?accountsTotalIDR():(at.income-at.expense);
-  const bals=new Array(data.length); bals[data.length-1]=endBal;
-  for(let i=data.length-2;i>=0;i--){ bals[i]=bals[i+1]-data[i+1].net; }
-  return data.map((d,i)=>({mk:d.mk,bal:bals[i]}));
-}
-function spendByCatRange(months){
-  const set=new Set(months); const tr=trackerIds(); const m={};
-  state.transactions.filter(t=>t.type==="expense"&&!tr.has(t.catId)&&set.has(monthKey(t.date))).forEach(t=>{m[t.catId]=(m[t.catId]||0)+ +t.amount;});
-  return Object.entries(m).map(([id,val])=>({cat:catById(id),id,val})).sort((a,b)=>b.val-a.val);
-}
 
 /* ===================== ROUTER ===================== */
 const PAGES=[
-  {id:"home",   grp:"",     icon:"🏠",label:"Overview",short:"Home"},
-  {id:"add",    grp:"TRANSACTION DATA", icon:"✏️",label:"Add transaction",short:"Add",more:true},
-  {id:"history",grp:"TRANSACTION DATA", icon:"📄",label:"Transactions",short:"Txns"},
-  {id:"reports",grp:"TRANSACTION DATA", icon:"📊",label:"Statistics & Analysis",short:"Stats"},
-  {id:"accounts",grp:"BASIS DATA", icon:"🏦",label:"Accounts",more:true},
-  {id:"cats",   grp:"BASIS DATA", icon:"📂",label:"Categories",more:true},
-  {id:"tags",   grp:"BASIS DATA", icon:"🏷️",label:"Tags",more:true},
-  {id:"bills",  grp:"BASIS DATA", icon:"🧾",label:"Scheduled & Bills",more:true},
-  {id:"biz",    grp:"BUSINESS",   icon:"🏝️",label:"Villas & Investors",short:"Villas"},
-  {id:"furniture",grp:"BUSINESS", icon:"🪑",label:"Furniture business",more:true},
-  {id:"goals",  grp:"BUSINESS",   icon:"🎯",label:"Goals",more:true},
-  {id:"debts",  grp:"BUSINESS",   icon:"💳",label:"Debt payoff",more:true},
-  {id:"setup",  grp:"MISCELLANEOUS", icon:"💱",label:"Exchange rates & setup",more:true},
-  {id:"backup", grp:"MISCELLANEOUS", icon:"💾",label:"Backup & data",more:true},
-  {id:"sheet",  grp:"MISCELLANEOUS", icon:"📋",label:"Google Sheet",more:true},
+  {id:"home",   grp:"",     icon:"🏠",label:"Home"},
+  {id:"add",    grp:"",     icon:"✏️",label:"Add"},
+  {id:"history",grp:"",     icon:"📜",label:"History"},
+  {id:"reports",grp:"",     icon:"📊",label:"Reports"},
+  {id:"biz",    grp:"",     icon:"🏝️",label:"Villas & Investors",short:"Business"},
+  {id:"furniture",grp:"More",icon:"🪑",label:"Furniture business",more:true},
+  {id:"bills",  grp:"More", icon:"🧾",label:"Bills",more:true},
+  {id:"goals",  grp:"More", icon:"🎯",label:"Goals",more:true},
+  {id:"debts",  grp:"More", icon:"💳",label:"Debt Payoff",more:true},
+  {id:"cats",   grp:"More", icon:"📂",label:"Categories",more:true},
+  {id:"sheet",  grp:"More", icon:"📋",label:"Google Sheet",more:true},
+  {id:"setup",  grp:"More", icon:"⚙️",label:"Setup",more:true},
+  {id:"backup", grp:"More", icon:"💾",label:"Backup & Data",more:true},
 ];
 const MOBILE_NAV=["home","add","history","reports","biz"];
 let route="home";
 let selCat=null;
-let selVilla=null;
-let selAcct=null;
 function go(id){ route=id; render(); window.scrollTo({top:0,behavior:"smooth"}); }
 
 function buildNav(){
@@ -637,7 +498,7 @@ function buildNav(){
   $("#sideNav").innerHTML=html;
   // mobile
   const mob=MOBILE_NAV.map(id=>{
-    if(id==="more"){return `<button data-more="1" class="${['furniture','bills','goals','debts','cats','catview','villaview','acctview','month','year','setup','backup'].includes(route)?'active':''}"><span class="ic">☰</span>More</button>`;}
+    if(id==="more"){return `<button data-more="1" class="${['furniture','bills','goals','debts','cats','catview','month','year','setup','backup'].includes(route)?'active':''}"><span class="ic">☰</span>More</button>`;}
     const p=PAGES.find(x=>x.id===id);
     return `<button data-go="${id}" class="${route===id?'active':''}"><span class="ic">${p.icon}</span>${p.short||p.label}</button>`;
   }).join("");
@@ -648,7 +509,7 @@ function buildNav(){
 function render(){
   buildNav();
   const c=$("#content");
-  const fn={home:Home,sheet:SheetPage,add:AddPage,history:History,reports:Reports,accounts:Accounts,tags:Tags,bills:Bills,goals:Goals,debts:Debts,cats:Cats,catview:CatView,biz:Biz,villaview:VillaView,acctview:AcctView,furniture:Furniture,dash:Reports,month:Reports,year:Reports,setup:Setup,backup:Backup}[route]||Home;
+  const fn={home:Home,sheet:SheetPage,add:AddPage,history:History,reports:Reports,bills:Bills,goals:Goals,debts:Debts,cats:Cats,catview:CatView,biz:Biz,furniture:Furniture,dash:Reports,month:Reports,year:Reports,setup:Setup,backup:Backup}[route]||Home;
   c.innerHTML=`<div class="page">${fn()}</div>`;
   afterRender();
 }
@@ -669,95 +530,88 @@ function SheetPage(){
 }
 
 /* ---------- HOME ---------- */
-/* ezBookkeeping-faithful Overview: Month-Expense summary + Asset Summary, 4 period cards,
-   Income & Expense Trends. TVM identity kept: real-cash accounts, need-to-be-paid, villas, cashflow. */
-function assetSummary(){
-  const accs=state.accounts||[];
-  let assets=0,negAcc=0;
-  accs.forEach(a=>{const idr=(+a.amount||0)*(a.currency==="EUR"?eurRate():1); if(idr>=0)assets+=idr; else negAcc+=-idr;});
-  const debtRem=(state.debts||[]).reduce((s,d)=>s+Math.max(0,(+d.total||0)-(+d.paid||0)),0);
-  const liabilities=negAcc+debtRem;
-  return {assets,liabilities,net:assets-liabilities};
-}
 function Home(){
   const mk=monthKey(); const t=monthTotals(mk);
   const greet=getGreeting();
   const name=state.settings.name?`, ${state.settings.name}`:"";
-  const recent=[...state.transactions].sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id)).slice(0,6);
-  const yr=String(new Date().getFullYear());
-  const today=todayISO();
-  const pT=periodTotals(today,today), pW=periodTotals(isoAddDays(today,-6),today), pM={income:t.income,expense:t.expense}, pY=ytdTotals(yr);
-  const nAcc=(state.accounts||[]).length, nVilla=(state.villas||[]).length;
-  const as=assetSummary();
-  const bal=allTimeTotals(); const balance=hasAccounts()?accountsTotalIDR():(bal.income-bal.expense);
-  const needPay=needToPayTotal();
-  const futureInc=futureIncomeTotal();
-  const epcard=(ic,label,range,p)=>`<div class="ez-pcard">
-    <div class="ep-h">${ic} ${label}</div><div class="ep-d">${range}</div>
-    <div class="ep-row"><span class="k"><span class="ep-dot i"></span>Income</span><span class="ep-in">${moneyShort(p.income)}</span></div>
-    <div class="ep-row"><span class="k"><span class="ep-dot o"></span>Expense</span><span class="ep-out">${moneyShort(p.expense)}</span></div>
-  </div>`;
+  const _upb=state.bills.map(b=>({b,s:billStatus(b)})).filter(x=>!x.s.donePeriod);
+  const toPay=_upb.reduce((a,x)=>a+(+x.b.amount||0),0);
+  const overdueCount=_upb.filter(x=>x.s.daysLeft<0).length;
+  const recent=[...state.transactions].sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id)).slice(0,5);
+  const goalsTease=state.goals.slice(0,2);
+  const bal=allTimeTotals(); const balance=bal.income-bal.expense;
+  const yr=String(new Date().getFullYear()); const ytd=ytdTotals(yr); const ytdNet=ytd.income-ytd.expense;
+  const _pd=new Date(mk+"-01"); _pd.setMonth(_pd.getMonth()-1);
+  const pt=monthTotals(`${_pd.getFullYear()}-${String(_pd.getMonth()+1).padStart(2,"0")}`);
+  const inv=investorTotals();
+  if(matchMedia('(min-width:1024px)').matches){
+    const tabs=[["Dashboard","home"],["Analytics","reports"],["Payments","add"],["Cards","biz"],["Transaction","history"]];
+    return `
+    <div class="dhome">
+      <div class="dh-top">
+        <div class="dh-greet"><h2>${greet}${name}</h2><p>Stay on top of the business and personal money, in one place.</p></div>
+        <div class="dh-tabs">${tabs.map(([l,r])=>`<button class="dh-tab ${r==='home'?'on':''}" data-go="${r}">${l}</button>`).join("")}</div>
+      </div>
+      ${!state.onboarded?welcomeCard():""}
+      <div class="dh-grid">
+        <div class="dh-wallet greenhero">
+          <div>
+            <div class="ghl">Smart Wallet · total balance</div>
+            <div class="ghbig ${balance>=0?'':'neg'}">${money(balance)}</div>
+            <div class="ghl" style="opacity:.72;margin-top:2px">Income ${money(t.income)} · Spent ${money(t.expense)} this month</div>
+          </div>
+          <div class="dh-qtiles">
+            <button class="qtile" data-go="add"><div class="qi">➕</div><div class="ql">Add</div></button>
+            <button class="qtile" data-go="history"><div class="qi">📜</div><div class="ql">History</div></button>
+            <button class="qtile" data-go="biz"><div class="qi">🏝️</div><div class="ql">Business</div></button>
+          </div>
+        </div>
+        <div class="dh-stats">${homeMetrics(t,pt,balance,ytdNet)}</div>
+      </div>
+      ${homeCashflow()}
+      <div class="grid two" style="margin-top:16px">
+        <div class="card"><div class="flex"><h3>Spending by category</h3><span class="right small muted">${monthName(mk)}</span></div>${catBarsBlock(mk)}</div>
+        <div class="card"><div class="flex"><h3>Recent transactions</h3><button class="btn sm secondary right" data-go="add">Add +</button></div><div class="list mt">${recent.length?recent.map(txRow).join(""):emptyState("🧺","No entries yet","Add your first one.")}</div></div>
+      </div>
+    </div>`;
+  }
   return `
-  <div class="page-head"><h2>Overview</h2><p>${greet}${name} — stay on top of the business and personal money, in one place.</p></div>
+  <div class="page-head"><h2>${greet}${name} ☀️</h2><p>Business and personal money, in one place.</p></div>
   ${!state.onboarded?welcomeCard():""}
-  <div class="ez-topgrid">
-    <div class="ez-expcard">
-      <div class="ez-doodle">💰</div>
-      <div class="ez-mlabel">Total balance <small>all accounts</small></div>
-      <div class="ez-mbig">${money(balance)}</div>
-      <div class="ez-msub">Income this month <b>${money(t.income)}</b> · Spent ${money(t.expense)}</div>
-      <button class="btn sm" data-go="history">View details →</button>
-    </div>
-    <div class="card ez-asset">
-      <div class="ez-a-h">Summary</div>
-      <div class="ez-a-sub">You have ${nAcc} account${nAcc===1?'':'s'}${nVilla?` · ${nVilla} villa${nVilla===1?'':'s'}`:''}</div>
-      <div class="ez-a-row"><div class="ez-a-ic">🏦</div><div class="ez-a-l">Total assets</div><div class="ez-a-v pos">${money(as.assets)}</div></div>
-      <div class="ez-a-row"><div class="ez-a-ic">📈</div><div class="ez-a-l">Total future income</div><div class="ez-a-v ${futureInc>0?'pos':''}">${money(futureInc)}</div></div>
-      <div class="ez-a-row"><div class="ez-a-ic">💸</div><div class="ez-a-l">Need to be paid</div><div class="ez-a-v" style="color:var(--warn)">${money(needPay)}</div></div>
+  <div class="greenhero mb">
+    <div class="ghl">Balance · all money in minus out</div>
+    <div class="ghbig ${balance>=0?'':'neg'}">${money(balance)}</div>
+    <div class="ghsub">
+      <div class="b"><div class="l"><span class="dotg"></span> Income this month</div><div class="v">${money(t.income)}</div></div>
+      <div class="b"><div class="l"><span class="doto"></span> Spent this month</div><div class="v">${money(t.expense)}</div></div>
     </div>
   </div>
-  <div class="ez-periods">
-    ${epcard("📅","Today",prettyDate(today),pT)}
-    ${epcard("🗓️","This week",`${prettyDate(isoAddDays(today,-6))} – ${prettyDate(today)}`,pW)}
-    ${epcard("📆","This month",monthName(mk),pM)}
-    ${epcard("📊","This year",yr,pY)}
-  </div>
-  <div class="card mb"><div class="flex"><h3>Income and Expense Trends</h3><span class="right small muted">last 12 months</span></div>${trendBars(trendData(12))}</div>
-  ${accountsCard()}
-  ${needToPayCard()}
+  ${homeMetrics(t,pt,balance,ytdNet)}
   ${homeCashflow()}
+  <div class="flex wrap mb" style="gap:8px">
+    <span class="pill ${t.net>=0?'good':'bad'}">This month net ${t.net>=0?'+':''}${money(t.net)}</span>
+    <span class="pill ${ytdNet>=0?'good':'bad'}">${yr} so far ${ytdNet>=0?'+':''}${money(ytdNet)}</span>
+    ${inv.outstanding>0?`<span class="pill warn">Owed to investors ${money(inv.outstanding)}</span>`:''}
+    ${toPay>0?`<span class="pill ${overdueCount?'bad':''}">To pay ${money(toPay)}</span>`:''}
+  </div>
+  <div class="card mb"><div class="sub" style="margin-bottom:10px">Quick menu</div>
+    <div class="qmenu">
+      <button class="qtile" data-go="add"><div class="qi">➕</div><div class="ql">Add</div></button>
+      <button class="qtile" data-go="history"><div class="qi">📜</div><div class="ql">History</div></button>
+      <button class="qtile" data-go="reports"><div class="qi">📊</div><div class="ql">Reports</div></button>
+      <button class="qtile" data-go="biz"><div class="qi">🏝️</div><div class="ql">Business</div></button>
+    </div>
+  </div>
+  ${upcomingCard()}
+  <div class="card mb"><div class="flex"><h3>Spending by category</h3><span class="right small muted">${monthName(mk)}</span></div>
+    ${catBarsBlock(mk)}
+  </div>
   <div class="card">
     <div class="flex"><h3>Recent transactions</h3><button class="btn sm secondary right" data-go="add">Add +</button></div>
-    <div class="list mt">${recent.length?recent.map(txRow).join(""):emptyState("🧺","No entries yet","Tap Add to log your first one.")}</div>
-  </div>`;
-}
-/* expected incoming money = income transactions dated in the future (e.g. villa rent due later this month) */
-function futureIncomeTotal(){
-  const today=todayISO();
-  return (state.transactions||[]).filter(x=>x.type==="income"&&(x.date||"").slice(0,10)>today).reduce((a,x)=>a+(+x.amount||0),0);
-}
-function needToPayTotal(){
-  const today=todayISO();
-  const bills=(state.bills||[]).map(b=>({b,s:billStatus(b)})).filter(x=>!x.s.donePeriod).reduce((a,x)=>a+(+x.b.amount||0),0);
-  const fut=(state.transactions||[]).filter(x=>x.type==="expense"&&(x.date||"").slice(0,10)>today).reduce((a,x)=>a+(+x.amount||0),0);
-  return bills+fut;
-}
-function needToPayCard(){
-  const today=todayISO();
-  const bills=(state.bills||[]).map(b=>({b,s:billStatus(b)})).filter(x=>!x.s.donePeriod)
-    .map(({b,s})=>({name:b.name,amount:+b.amount||0,days:s.daysLeft,overdue:s.daysLeft<0,ic:'🧾'}));
-  const fut=(state.transactions||[]).filter(x=>x.type==='expense'&&(x.date||'').slice(0,10)>today)
-    .map(t=>({name:t.note||catById(t.catId).name,amount:+t.amount||0,days:Math.round((new Date(t.date)-new Date(today))/864e5),overdue:false,ic:'📅'}));
-  const items=[...bills,...fut].sort((a,b)=>a.days-b.days);
-  const total=items.reduce((s,x)=>s+x.amount,0);
-  const overdue=items.filter(x=>x.overdue).length;
-  if(!items.length) return `<div class="card mb"><h3>💸 Need to be paid</h3><div class="sub" style="margin-top:6px">Nothing due right now — you're all caught up. Add a bill in the Bills page to track upcoming payments.</div></div>`;
-  const row=x=>`<div class="tx-line"><div class="tx-ic">${x.ic}</div><div class="tx-main"><div class="tx-t">${esc(x.name)}</div><div class="tx-s">${x.overdue?`<span style="color:var(--danger)">Overdue ${-x.days}d</span>`:x.days===0?'Due today':`In ${x.days}d`}</div></div><div class="tx-amt exp">${money(x.amount)}</div></div>`;
-  return `<div class="card mb"><div class="flex"><h3>💸 Need to be paid</h3><span class="right pill ${overdue?'bad':'warn'}">${money(total)}</span></div>
-    ${overdue?`<div class="small" style="color:var(--danger);margin:2px 0 6px">${overdue} overdue</div>`:''}
-    <div class="list mt">${items.slice(0,6).map(row).join("")}</div>
-    ${items.length>6?`<button class="btn sm secondary mt" data-go="bills">See all ${items.length}</button>`:''}
-  </div>`;
+    <div class="sub">Your latest entries</div>
+    <div class="list">${recent.length?recent.map(txRow).join(""):emptyState("🧺","No entries yet","Tap “Daily Input” to log your first one.")}</div>
+  </div>
+  ${goalsTease.length?`<div class="card mt"><div class="flex"><h3>Your goals</h3><button class="btn sm secondary right" data-go="goals">View</button></div>${goalsTease.map(goalMini).join("")}</div>`:""}`;
 }
 function welcomeCard(){
   return `<div class="card mb" style="border-color:var(--brand);background:var(--brand-soft)">
@@ -779,46 +633,25 @@ let addType="expense";
 function AddPage(){
   const mk=monthKey(); const t=monthTotals(mk);
   const todays=state.transactions.filter(x=>x.date===todayISO()).sort((a,b)=>b.id.localeCompare(a.id));
-  const isTransfer=addType==="transfer";
-  const catType=addType==="income"?"income":"expense";
-  const parents=topCats(catType);
-  const firstParent=parents[0]||null;
-  const kids=firstParent?childCats(firstParent.id):[];
-  const tags=allTags();
-  const _accs=state.accounts||[];
-  const acc0=(_accs[0]||{}).id;
-  const acc1=(_accs[1]||_accs[0]||{}).id;
+  const expenseCats=state.categories.filter(c=>c.type==="expense");
+  const incomeCats=state.categories.filter(c=>c.type==="income");
+  const cats=addType==="expense"?expenseCats:incomeCats;
   return `
-  <div class="page-head"><h2>Add money ✏️</h2><p>Log money in, out, or moved between accounts. It flows into Home, Reports and Business automatically.</p></div>
+  <div class="page-head"><h2>Add money ✏️</h2><p>Log money in and out. It flows into Home, Reports and Business automatically.</p></div>
   <div class="card mb">
-    <div class="seg tri mb" id="typeSeg">
+    <div class="seg mb" id="typeSeg">
       <button data-type="expense" class="${addType==='expense'?'on exp':''}">➖ Expense</button>
       <button data-type="income" class="${addType==='income'?'on inc':''}">➕ Income</button>
-      <button data-type="transfer" class="${isTransfer?'on tf':''}">🔁 Transfer</button>
     </div>
-    <div class="field"><label>Amount</label><input id="amt" type="number" inputmode="decimal" placeholder="0" step="0.01" style="font-size:26px;font-weight:700"/></div>
-
-    <div id="eiFields" style="${isTransfer?'display:none':''}">
-      ${hasAccounts()?`<div class="field"><label>Account <span style="color:var(--muted);font-weight:400">— your balance updates</span></label><select id="txAcct">${acctOptions(acc0)}<option value="">— don't change balance —</option></select></div>`:`<div class="field"><label>Bank (optional)</label><input id="txBank" list="bankList" placeholder="Bank"/><datalist id="bankList"><option>BCA</option><option>Permata</option><option>CIMB Niaga</option><option>Jago</option><option>Wise</option></datalist></div>`}
-      <div class="row">
-        <div class="field"><label>Category</label><select id="txCatParent">${parents.map(c=>`<option value="${c.id}">${c.emoji} ${esc(c.name)}</option>`).join("")}</select></div>
-        <div class="field"><label>Subcategory</label><select id="txCatChild" ${kids.length?'':'disabled'}><option value="">${kids.length?'— optional —':'— none —'}</option>${kids.map(c=>`<option value="${c.id}">${c.emoji} ${esc(c.name)}</option>`).join("")}</select></div>
-      </div>
+    <div class="row">
+      <div class="field" style="flex:1.2"><label>Amount</label><input id="amt" type="number" inputmode="decimal" placeholder="0" step="0.01" /></div>
+      <div class="field"><label>Date</label><input id="date" type="date" value="${todayISO()}" /></div>
     </div>
-
-    <div id="tfFields" style="${isTransfer?'':'display:none'}">
-      ${hasAccounts()?`<div class="row">
-        <div class="field"><label>From</label><select id="txFrom">${acctOptions(acc0)}</select></div>
-        <div class="field"><label>To</label><select id="txTo">${acctOptions(acc1)}</select></div>
-      </div>`:`<p class="small muted">Add accounts first (Home → Accounts) to move money between them.</p>`}
+    <div class="field"><label>Category</label>
+      <select id="cat">${cats.map(c=>`<option value="${c.id}">${c.emoji} ${c.name}</option>`).join("")}</select>
     </div>
-
-    <div class="field"><label>Date</label><input id="date" type="date" value="${todayISO()}"/></div>
     ${(state.villas||[]).length?`<div class="field"><label>Villa / project (optional)</label><select id="txVilla">${villaOptions("")}</select></div>`:''}
-    <div class="field"><label>Tags (optional)</label>
-      <div class="tag-input-row"><input id="txTags" placeholder="comma or space separated, e.g. urgent villa-a"/></div>
-      ${tags.length?`<div class="chip-row" id="txTagSug" style="margin-top:6px">${tags.map(g=>`<button type="button" class="chip" data-tag="${esc(g)}">${esc(g)}</button>`).join("")}</div>`:''}
-    </div>
+    <div class="field"><label>Bank (optional)</label><input id="txBank" list="bankList" placeholder="Bank"/><datalist id="bankList"><option>BCA</option><option>Permata</option><option>CIMB Niaga</option><option>Jago</option><option>Wise</option></datalist></div>
     <div class="field"><label>Note (optional)</label><input id="note" placeholder="e.g. Weekly market run" /></div>
     <button class="btn" data-act="addTx">Add entry</button>
     <button class="btn secondary mt" data-act="repeatLastMonth">🔁 Repeat last month</button>
@@ -940,8 +773,8 @@ function billRow(b,s){
   return `<div class="item">
     <button class="emoji" data-paybill="${b.id}" title="Mark paid">⭕</button>
     <div class="main"><div class="t">${esc(b.name)}</div><div class="s">${dueDateLabel(s)}</div></div>
-    <div style="text-align:right;flex-shrink:0;max-width:46%">
-      <div class="amt exp" style="white-space:normal;overflow-wrap:break-word">${money(b.amount)}</div>
+    <div style="text-align:right">
+      <div class="amt exp">${money(b.amount)}</div>
       <div style="margin-top:3px">${dueChip(s)}</div>
     </div>
     <button class="x" data-delbill="${b.id}">✕</button>
@@ -952,7 +785,7 @@ function paidRow(b){
   return `<div class="item">
     <button class="emoji" data-unpaybill="${b.id}" title="Mark unpaid" style="background:var(--brand-soft)">✅</button>
     <div class="main"><div class="t">${esc(b.name)}</div><div class="s">${isOnce?'one-time':'monthly'} · tap ✓ to undo</div></div>
-    <div class="amt exp" style="white-space:normal;overflow-wrap:break-word;flex-shrink:0;max-width:46%;text-align:right">${money(b.amount)}</div>
+    <div class="amt exp">${money(b.amount)}</div>
     <button class="x" data-delbill="${b.id}">✕</button>
   </div>`;
 }
@@ -980,8 +813,8 @@ function goalCard(g){
   const pct=g.target>0?clamp(Math.round(g.saved/g.target*100),0,100):0;
   return `<div class="card">
     <div class="flex"><h3>${g.emoji||'🎯'} ${esc(g.name)}</h3><button class="x right" data-delgoal="${g.id}">✕</button></div>
-    <div class="flex wrap small muted" style="justify-content:space-between;gap:6px"><span>${money(g.saved)} of ${money(g.target)}</span><span>${pct}%</span></div>
-    <div class="bar mt ${pct>=50?'':'warn'}"><i style="width:${pct}%"></i></div>
+    <div class="flex small muted" style="justify-content:space-between"><span>${money(g.saved)} of ${money(g.target)}</span><span>${pct}%</span></div>
+    <div class="bar mt ${pct>=100?'':pct>=50?'':'warn'}"><i style="width:${pct}%"></i></div>
     <div class="flex wrap mt">
       <button class="btn sm secondary" data-addsave="${g.id}">＋ Add money</button>
       ${pct>=100?'<span class="pill good">Reached! 🎉</span>':`<span class="small muted right">${money(g.target-g.saved)} to go</span>`}
@@ -990,7 +823,7 @@ function goalCard(g){
 }
 function goalMini(g){
   const pct=g.target>0?clamp(Math.round(g.saved/g.target*100),0,100):0;
-  return `<div class="mt"><div class="flex wrap small" style="justify-content:space-between;gap:6px"><span>${g.emoji||'🎯'} ${esc(g.name)}</span><span class="muted">${pct}%</span></div><div class="bar" style="margin-top:5px"><i style="width:${pct}%"></i></div></div>`;
+  return `<div class="mt"><div class="flex small" style="justify-content:space-between"><span>${g.emoji||'🎯'} ${esc(g.name)}</span><span class="muted">${pct}%</span></div><div class="bar" style="margin-top:5px"><i style="width:${pct}%"></i></div></div>`;
 }
 
 /* ---------- DEBTS ---------- */
@@ -1023,7 +856,7 @@ function debtCard(d){
   const pct=d.total>0?clamp(Math.round(d.paid/d.total*100),0,100):0;
   return `<div class="card">
     <div class="flex"><h3>${d.emoji||'💳'} ${esc(d.name)}</h3><button class="x right" data-deldebt="${d.id}">✕</button></div>
-    <div class="flex wrap small muted" style="justify-content:space-between;gap:6px"><span>${money(d.paid)} paid of ${money(d.total)}</span><span>${pct}%</span></div>
+    <div class="flex small muted" style="justify-content:space-between"><span>${money(d.paid)} paid of ${money(d.total)}</span><span>${pct}%</span></div>
     <div class="bar mt ${pct>=100?'':'warn'}"><i style="width:${pct}%"></i></div>
     <div class="flex wrap mt">
       <button class="btn sm secondary" data-addpay="${d.id}">＋ Log payment</button>
@@ -1102,20 +935,17 @@ function villaCard(v){
   const pill=v.status?`<span class="pill ${stCls}" style="margin-left:6px">${esc(v.status)}</span>`:'';
   const meta=[ v.code?esc(v.code):null, (v.owner&&v.owner!=='TVM')?esc(v.owner):null,
                v.rentYear?`Rent ${money(v.rentYear)}/yr`:null ].filter(Boolean).join(' · ');
-  /* whole card is tappable → VillaView; the click-delegate in 14_actions_init.js walks up
-     via closest(), so the inner ＋Log / ✕ buttons still win over the card's data-villaview. */
-  return `<div class="item" data-villaview="${v.id}" style="align-items:flex-start;cursor:pointer">
+  return `<div class="item" style="align-items:flex-start">
     <div class="emoji">${v.emoji||'🏝️'}</div>
     <div class="main"><div class="t">${esc(v.name)}${pill}</div>
     ${meta?`<div class="s">${meta}</div>`:''}
     <div class="s">In ${money(v.income||0)} · Out ${money(v.expense||0)}</div>
     ${v.note?`<div class="s" style="white-space:normal;opacity:.82;margin-top:2px">${esc(v.note)}</div>`:''}</div>
-    <div style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;max-width:40%">
-      <div class="amt ${net>=0?'inc':'exp'}" style="max-width:100%;overflow:hidden;text-overflow:ellipsis" title="${money(Math.abs(net))}">${net>=0?'+':'−'}${money(Math.abs(net))}</div>
-      <button class="btn sm secondary" data-villaio="${v.id}">＋ Log</button>
+    <div style="text-align:right">
+      <div class="amt ${net>=0?'inc':'exp'}">${net>=0?'+':'−'}${money(Math.abs(net))}</div>
+      <button class="btn sm secondary" data-villaio="${v.id}" style="margin-top:4px">＋ Log</button>
     </div>
-    <span class="muted" style="font-size:18px;line-height:1;align-self:center;flex-shrink:0">›</span>
-    <button class="x" data-delvilla="${v.id}" title="Delete villa">✕</button>
+    <button class="x" data-delvilla="${v.id}">✕</button>
   </div>`;
 }
 function invCard(x){
@@ -1195,262 +1025,83 @@ function furnRow(o){
 
 /* ---------- HISTORY (all transactions) ---------- */
 function catColor(catId){const i=state.categories.findIndex(c=>c.id===catId);return chartColor(i<0?0:i);}
-
-/* ---------- HISTORY (ezbookkeeping-style grouped list) ---------- */
-/* Filter state lives on window.__hf and drives a local re-render of the list
-   only (the filter bar itself is never re-rendered, so text-search keeps focus).
-   Rows carry class "hrow" + data-id so the existing exportHist action in
-   14_actions_init.js keeps working and exports exactly the filtered set. */
-
-function histState(){
-  if(!window.__hf) window.__hf={type:"all",acct:"",cat:"",tag:"",villa:"",month:"",q:""};
-  return window.__hf;
-}
-function histMatch(t,hf){
-  if(hf.type&&hf.type!=="all"&&t.type!==hf.type) return false;
-  if(hf.acct){
-    if(t.type==="transfer"){ if(t.acctId!==hf.acct&&t.toAcctId!==hf.acct) return false; }
-    else if(t.acctId!==hf.acct) return false;
-  }
-  if(hf.cat){ if(!(t.catId===hf.cat||catRollupId(t.catId)===hf.cat)) return false; }
-  if(hf.tag&&!(t.tags||[]).includes(hf.tag)) return false;
-  if(hf.villa&&t.villaId!==hf.villa) return false;
-  if(hf.month&&monthKey(t.date)!==hf.month) return false;
-  if(hf.q){
-    const c=catById(t.catId);
-    const v=t.villaId?(state.villas||[]).find(x=>x.id===t.villaId):null;
-    let hay=`${t.note||""} ${c?c.name:""} ${v?v.name:""} ${(t.tags||[]).join(" ")}`;
-    if(t.type==="transfer"){
-      const f=(state.accounts||[]).find(a=>a.id===t.acctId),to=(state.accounts||[]).find(a=>a.id===t.toAcctId);
-      hay+=` ${f?f.name:""} ${to?to.name:""}`;
-    }
-    if(!hay.toLowerCase().includes(hf.q)) return false;
-  }
-  return true;
-}
-function histFiltered(){
-  const hf=histState();
-  return state.transactions
-    .filter(t=>histMatch(t,hf))
-    .sort((a,b)=>b.date.localeCompare(a.date)||(b._m||0)-(a._m||0));
-}
-function histNet(list){
-  let inc=0,exp=0;
-  list.forEach(t=>{ if(t.type==="income")inc+= +t.amount||0; else if(t.type==="expense")exp+= +t.amount||0; });
-  return {inc,exp,net:inc-exp};
-}
-function histDayLabel(iso){
-  const today=todayISO();
-  const d=new Date(iso+"T00:00");
-  const yd=new Date(Date.now()-86400000).toISOString().slice(0,10);
-  const opts={weekday:"short",month:"short",day:"numeric"};
-  if(d.getFullYear()!==new Date().getFullYear()) opts.year="numeric";
-  const nice=d.toLocaleDateString(undefined,opts);
-  if(iso===today) return `Today · ${nice}`;
-  if(iso===yd) return `Yesterday · ${nice}`;
-  return nice;
-}
-
 function hRow(t){
-  const isTf=t.type==="transfer", isInc=t.type==="income";
-  const c=catById(t.catId);
+  const c=catById(t.catId);const inc=t.type==="income";
   const v=t.villaId?(state.villas||[]).find(x=>x.id===t.villaId):null;
-  const ic=isTf?"🔁":(isInc?"💸":(c.emoji||"📦"));
-  const title=isTf?transferLabel(t):esc(c.name);
-  const acct=isTf?"":((state.accounts||[]).find(a=>a.id===t.acctId)||{}).name;
-  const parts=[];
-  if(!isTf&&acct) parts.push(esc(acct));
-  else if(!isTf&&t.bank) parts.push(esc(t.bank));
-  if(v) parts.push(`${v.emoji||"🏠"} ${esc(v.name)}`);
-  if(t.note) parts.push(esc(t.note));
-  const tags=tagChips(t.tags);
-  let sub=parts.join(" · ");
-  if(tags) sub+=(sub?" ":"")+tags;
-  const cls=isTf?"tf":(isInc?"inc":"exp");
-  const sign=isTf?"":(isInc?"+":"−");
-  return `<div class="tx-line hrow" data-id="${t.id}" data-edittx="${t.id}" style="cursor:pointer">
-    <div class="tx-ic">${ic}</div>
-    <div class="tx-main">
-      <div class="tx-t">${title}</div>
-      <div class="tx-s">${sub||"&nbsp;"}</div>
+  const col=catColor(t.catId);
+  const s=`${t.note||''} ${c.name} ${v?v.name:''}`.toLowerCase().replace(/["\\]/g,'');
+  return `<div class="hrow" data-id="${t.id}" data-mk="${monthKey(t.date)}" data-cat="${t.catId}" data-villa="${esc((v?v.name:'')||'')}" data-tt="${t.type}" data-amt="${t.amount}" data-s="${esc(s)}">
+    <div class="hhead" data-exp="1">
+      <span class="hdot" style="background:${col}"></span>
+      <div class="hdesc"><div class="ht">${esc(t.note)||esc(c.name)}</div><div class="hc">${c.emoji} ${esc(c.name)} · ${prettyDate(t.date)}${v?` · ${v.emoji||'🏠'} ${esc(v.name)}`:''}</div></div>
+      <div class="hamt ${inc?'inc':'exp'}">${inc?'+':'−'}${money(t.amount)}</div>
+      <span class="hchev">▾</span>
     </div>
-    <div class="tx-amt ${cls}">${sign}${money(t.amount)}</div>
+    <div class="hdetail">
+      <div class="dgrid">
+        <div><div class="dk">Date</div><div class="dv">${prettyDate(t.date)}</div></div>
+        <div><div class="dk">Category</div><div class="dv">${c.emoji} ${esc(c.name)}</div></div>
+        <div><div class="dk">Type</div><div class="dv ${inc?'inc':'exp'}">${inc?'Income':'Expense'}</div></div>
+        <div><div class="dk">Amount</div><div class="dv ${inc?'inc':'exp'}">${inc?'+':'−'}${money(t.amount)}</div></div>
+        ${v?`<div><div class="dk">Villa</div><div class="dv">${v.emoji||'🏠'} ${esc(v.name)}</div></div>`:''}
+        ${t.bank?`<div><div class="dk">Bank</div><div class="dv">${esc(t.bank)}</div></div>`:''}
+        ${t.note?`<div style="grid-column:1/3"><div class="dk">Note</div><div class="dv">${esc(t.note)}</div></div>`:''}
+      </div>
+      <div class="mt"><button class="btn sm secondary" data-edittx="${t.id}">✎ Edit</button></div>
+    </div>
   </div>`;
 }
-
-function histListInner(list){
-  if(!list.length) return `<div class="empty" style="padding:26px 8px">${emptyState("🔍","No matches","Try clearing a filter or the search box.")}</div>`;
-  let out="",lastDay=null,bucket="";
-  const flush=()=>{
-    if(lastDay===null) return;
-    const day=list.filter(t=>t.date===lastDay);
-    const n=histNet(day);
-    const netCls=n.net>=0?"inc":"exp";
-    out+=`<div class="day-group"><div class="day-head"><span>${histDayLabel(lastDay)}</span><span class="net ${netCls}">${n.net>=0?"+":"−"}${money(Math.abs(n.net))}</span></div>${bucket}</div>`;
-    bucket="";
-  };
-  list.forEach(t=>{ if(t.date!==lastDay){ flush(); lastDay=t.date; } bucket+=hRow(t); });
-  flush();
-  // hidden markers so exportHist ($$('.hrow')) is unnecessary — rows already carry .hrow.
-  return out;
-}
-
-function histRender(){
-  const list=histFiltered();
-  const w=$("#histListWrap"); if(w) w.innerHTML=histListInner(list);
-  const cn=$("#histN"); if(cn) cn.textContent=`${list.length} ${list.length===1?"entry":"entries"}`;
-  const nt=$("#histNet"); if(nt){ const n=histNet(list); nt.className=`tx-amt ${n.net>=0?"inc":"exp"}`; nt.textContent=`${n.net>=0?"+":"−"}${money(Math.abs(n.net))}`; }
-}
-function histApply(){
-  const hf=histState();
-  const g=id=>{const e=$("#"+id);return e?e.value:"";};
-  window.__hf={type:hf.type||"all",acct:g("hfAcct"),cat:g("hfCat"),tag:g("hfTag"),villa:g("hfVilla"),month:g("hfMonth"),q:g("hfSearch").toLowerCase().trim()};
-  histRender();
-}
-function histSetType(v){
-  const hf=histState(); hf.type=v; window.__hf=hf;
-  $$("#hfType .chip").forEach(c=>c.classList.toggle("on",c.dataset.v===v));
-  histRender();
-}
-
 function History(){
-  window.__histType="all"; // neutralise the legacy external filter in 13_shared_render.js
-  const hf=histState();
-  const head=`<div class="page-head"><h2>Transactions 📜</h2><p>Every transaction, newest first. Tap a row to edit.</p></div>`;
-  if(!state.transactions.length) return head+`<div class="card">${emptyState("📜","Nothing yet","Add your first entry from the Add page.")}</div>`;
-
+  const sortMode=window.__histSort||"date";
+  const txs=[...state.transactions];
+  if(sortMode==="amtdesc") txs.sort((a,b)=>(+b.amount||0)-(+a.amount||0)||b.date.localeCompare(a.date));
+  else if(sortMode==="amtasc") txs.sort((a,b)=>(+a.amount||0)-(+b.amount||0)||b.date.localeCompare(a.date));
+  else txs.sort((a,b)=>b.date.localeCompare(a.date)||(b._m||0)-(a._m||0));
+  const head=`<div class="page-head"><h2>History 📜</h2><p>Every transaction, newest first. Tap a row for details.</p></div>`;
+  if(!txs.length) return head+`<div class="card">${emptyState("📜","Nothing yet","Add your first entry from the Add page.")}</div>`;
+  const cats=[...state.categories].sort((a,b)=>a.name.localeCompare(b.name));
   const months=[...new Set(state.transactions.map(t=>monthKey(t.date)))].sort().reverse();
-  const tags=allTags();
-  const accts=state.accounts||[];
-  const villas=state.villas||[];
-
-  const typeChips=[["all","All"],["expense","Expense"],["income","Income"],["transfer","Transfer"]]
-    .map(([v,l])=>`<button class="chip ${hf.type===v?"on":""}" data-v="${v}" onclick="histSetType('${v}')">${l}</button>`).join("");
-
-  const catSel=`<select id="hfCat" onchange="histApply()"><option value="">All categories</option>${
-    topCats().map(p=>{
-      const kids=childCats(p.id);
-      const pOpt=`<option value="${p.id}" ${hf.cat===p.id?"selected":""}>${p.emoji||"📦"} ${esc(p.name)}</option>`;
-      if(!kids.length) return pOpt;
-      return `<optgroup label="${esc(p.name)}">${pOpt}${kids.map(k=>`<option value="${k.id}" ${hf.cat===k.id?"selected":""}>   ${k.emoji||"•"} ${esc(k.name)}</option>`).join("")}</optgroup>`;
-    }).join("")
-  }</select>`;
-
-  const acctSel=accts.length?`<select id="hfAcct" onchange="histApply()"><option value="">All accounts</option>${accts.map(a=>`<option value="${a.id}" ${hf.acct===a.id?"selected":""}>${esc(a.name)}${a.currency==="EUR"?" (EUR)":""}</option>`).join("")}</select>`:"";
-  const villaSel=villas.length?`<select id="hfVilla" onchange="histApply()"><option value="">All villas</option>${villas.map(v=>`<option value="${v.id}" ${hf.villa===v.id?"selected":""}>${v.emoji||"🏠"} ${esc(v.name)}</option>`).join("")}</select>`:"";
-  const tagSel=tags.length?`<select id="hfTag" onchange="histApply()"><option value="">All tags</option>${tags.map(g=>`<option value="${esc(g)}" ${hf.tag===g?"selected":""}>#${esc(g)}</option>`).join("")}</select>`:"";
-  const monthSel=`<select id="hfMonth" onchange="histApply()"><option value="">All months</option>${months.map(m=>`<option value="${m}" ${hf.month===m?"selected":""}>${monthName(m)}</option>`).join("")}</select>`;
-  const search=`<input id="hfSearch" placeholder="Search note, category, villa…" value="${esc(hf.q)}" oninput="histApply()" style="flex:1;min-width:150px">`;
-
-  const list=histFiltered();
-  const n=histNet(list);
-
+  const villaNames=[...new Set([...state.transactions.map(t=>{const vv=t.villaId?(state.villas||[]).find(x=>x.id===t.villaId):null;return vv?vv.name:'';}).filter(Boolean),...(state.villas||[]).map(v=>v.name)])].sort((a,b)=>a.localeCompare(b));
+  const ht=window.__histType||"all";
+  const amtSort=(sortMode==="amtdesc"||sortMode==="amtasc");
+  let lastMk=null,rows="";
+  txs.forEach(t=>{if(!amtSort){const mk=monthKey(t.date);if(mk!==lastMk){rows+=`<div class="hhdr" data-mk="${mk}">${monthName(mk)}</div>`;lastMk=mk;}}rows+=hRow(t);});
   return head+`
-  <div class="card mb">
-    <div class="filterbar">
-      <div class="chip-row" id="hfType" style="flex-basis:100%">${typeChips}</div>
-      ${catSel}${acctSel}${villaSel}${tagSel}${monthSel}${search}
+  <div class="card mb"><div class="histbar">
+    <input id="histSearch" class="histsearch" placeholder="Search description, category, villa...">
+    <div class="row">
+      <select id="histCat" class="histsel"><option value="">All categories</option>${cats.map(c=>`<option value="${c.id}">${c.emoji} ${esc(c.name)}</option>`).join("")}</select>
+      <select id="histMonth" class="histsel"><option value="">All months</option>${months.map(m=>`<option value="${m}">${monthName(m)}</option>`).join("")}</select>
     </div>
-  </div>
-  <div class="card">
-    <div class="flex wrap" style="align-items:center;gap:10px;margin-bottom:6px">
-      <h3 id="histN" style="margin:0">${list.length} ${list.length===1?"entry":"entries"}</h3>
-      <span id="histNet" class="tx-amt ${n.net>=0?"inc":"exp"}">${n.net>=0?"+":"−"}${money(Math.abs(n.net))}</span>
-      <button class="btn sm secondary" data-act="exportHist">📥 Export CSV</button>
-      <button class="btn sm secondary right" data-go="add">Add +</button>
+    <div class="row">
+      <select id="histVilla" class="histsel"><option value="">All villas</option>${villaNames.map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join("")}</select>
+      <select id="histSort" class="histsel"><option value="date" ${sortMode==='date'?'selected':''}>Newest first</option><option value="amtdesc" ${sortMode==='amtdesc'?'selected':''}>Amount high→low</option><option value="amtasc" ${sortMode==='amtasc'?'selected':''}>Amount low→high</option></select>
     </div>
-    <div id="histListWrap">${histListInner(list)}</div>
-  </div>`;
+    <div class="seg" id="histType"><button data-ht="all" class="${ht==='all'?'on':''}">All</button><button data-ht="income" class="${ht==='income'?'on inc':''}">In</button><button data-ht="expense" class="${ht==='expense'?'on exp':''}">Out</button></div>
+    <div class="histsum" id="histSum"></div>
+  </div></div>
+  <div class="card"><div class="flex wrap"><h3 id="histCount">${txs.length} entries</h3><button class="btn sm secondary" data-act="exportHist">📥 Export filtered (CSV)</button><button class="btn sm secondary right" data-go="add">Add +</button></div>
+  <div class="list mt" id="histList">${rows}</div></div>`;
 }
 
 /* ---------- REPORTS (month + year, merged) ---------- */
-
 function Reports(){
-  const view=["overview","month","year"].includes(window.__repView)?window.__repView:"overview";
-  const seg=`<div class="seg mb" id="repSeg"><button data-rep="overview" class="${view==='overview'?'on':''}">📈 Overview</button><button data-rep="month" class="${view==='month'?'on':''}">📅 Month</button><button data-rep="year" class="${view==='year'?'on':''}">📆 Year</button></div>`;
-  if(view==='year') return reportsYear(seg);
-  if(view==='month') return reportsMonth(seg);
-  return reportsOverview(seg);
-}
-function reportsOverview(seg){
-  const N=[3,6,12].includes(window.__anaRange)?window.__anaRange:6;
-  const months=lastNMonths(N); const data=trendData(N);
-  const totIn=sum(data,d=>d.income), totOut=sum(data,d=>d.expense); const net=totIn-totOut;
-  const avgSpend=Math.round(totOut/N);
-  const byCatSub=spendByCatRange(months);            // subcategory-level (transfers already excluded)
-  const roll=window.__anaRollup?1:0;
-  const byCat=roll?rollupByParent(byCatSub):byCatSub; // toggle: rolled up to parent categories
-  const top=byCat[0];
-  const byTag=spendByTagRange(months);               // expense per tag across range
-  const at=allTimeTotals(); const balance=hasAccounts()?accountsTotalIDR():(at.income-at.expense);
-  const villas=villaRows();
-  const rangeSeg=`<div class="seg mb" id="anaRange"><button data-ana="3" class="${N===3?'on':''}">3 months</button><button data-ana="6" class="${N===6?'on':''}">6 months</button><button data-ana="12" class="${N===12?'on':''}">12 months</button></div>`;
-  const rollSeg=`<div class="seg" style="max-width:230px"><button onclick="window.__anaRollup=0;render()" class="${roll?'':'on'}">Detailed</button><button onclick="window.__anaRollup=1;render()" class="${roll?'on':''}">Grouped</button></div>`;
-  return `<div class="page-head"><h2>Statistics &amp; Analysis 📊</h2><p>The full picture — trends, categories and every villa, side by side.</p></div>${seg}${rangeSeg}
-  <div class="grid kpi mb">
-    ${kpi("Balance now",moneyShort(balance),"💰",balance>=0?'good':'bad')}
-    ${kpi("Net · "+N+"mo",(net>=0?'+':'')+moneyShort(net),net>=0?"🌱":"⚠️",net>=0?'good':'bad')}
-    ${kpi("Avg spend / mo",moneyShort(avgSpend),"📉")}
-    ${kpi("Top category",top?`${top.cat.emoji} ${top.cat.name}`:"—","🏆")}
-  </div>
-  <div class="card mb"><div class="flex"><h3>Income vs expense</h3><span class="right small muted">last ${N} months</span></div>
-    <div class="sub">Green = in, coral = out</div>${trendBars(data)}</div>
-  <div class="card mb"><div class="flex"><h3>Estimated balance</h3><span class="right small muted">trend</span></div>
-    <div class="sub">Where your cash has been heading, month by month</div>${lineChart(balanceTrend(N))}</div>
-  <div class="flex mb" style="align-items:center;gap:10px"><h3 style="margin:0">Expense breakdown</h3><div class="right">${rollSeg}</div></div>
-  <div class="grid two mb">
-    <div class="card"><h3>By ${roll?'group':'category'}</h3><div class="sub">Share of expenses · last ${N} months</div>${donutFromData(byCat)}</div>
-    <div class="card"><h3>Top spending</h3><div class="sub">Biggest ${roll?'groups':'categories'} · tap to drill in</div>${catBarsFromData(byCat)}</div>
-  </div>
-  <div class="card mb"><div class="flex"><h3>🏷️ Spending by tag</h3><span class="right small muted">last ${N} months</span></div>
-    <div class="sub">Expenses grouped by the tags on your entries</div>
-    ${byTag.length?catBarsFromData(byTag):emptyState("🏷️","No tags yet","Add tags to transactions to see this breakdown.")}</div>
-  <div class="card"><div class="flex"><h3>🏝️ Villas compared</h3><button class="btn sm secondary right" data-go="biz">Manage</button></div>
-    <div class="sub">Income, cost and net profit per property — tap one for the full breakdown</div>
-    ${villaCompare(villas)}</div>`;
-}
-/* ---- expense-per-tag across a month range; transfers excluded via type filter, trackers excluded.
-   a multi-tagged entry counts toward each of its tags, so this is a bar list (not a 100%-share donut). */
-function spendByTagRange(months){
-  const set=new Set(months); const tr=trackerIds(); const m={};
-  state.transactions.filter(t=>t.type==="expense"&&!tr.has(t.catId)&&set.has(monthKey(t.date)))
-    .forEach(t=>(t.tags||[]).forEach(g=>{if(g)m[g]=(m[g]||0)+ +t.amount;}));
-  return Object.entries(m).map(([tag,val])=>({cat:{emoji:'🏷️',name:tag},id:null,val})).sort((a,b)=>b.val-a.val);
-}
-/* roll a subcategory-level spend array up to its parent category via catRollupId */
-function rollupByParent(data){
-  const m={};
-  data.forEach(d=>{const rid=catRollupId(d.id); if(!m[rid])m[rid]={cat:catById(rid),id:rid,val:0}; m[rid].val+=d.val;});
-  return Object.values(m).sort((a,b)=>b.val-a.val);
-}
-function villaCompare(villas){
-  villas=villas||villaRows();
-  if(!villas.length) return emptyState("🏝️","No villas yet","Add properties in Business to compare them here.");
-  const max=Math.max(...villas.map(v=>Math.max(v.income,v.expense)),1);
-  return `<div class="list mt">${villas.map(v=>`
-    <button class="item" data-villaview="${v.id}" style="width:100%;text-align:left;cursor:pointer;align-items:flex-start">
-      <div class="emoji">${v.emoji||'🏝️'}</div>
-      <div class="main"><div class="t">${esc(v.name)}${v.status?` <span class="tag">${esc(v.status)}</span>`:''}</div>
-        <div style="margin-top:7px;display:flex;flex-direction:column;gap:5px">
-          <div class="cbrow" style="grid-template-columns:34px 1fr auto"><span class="cbn small muted">In</span><span class="cbbar"><i style="width:${Math.max(3,Math.round(v.income/max*100))}%;background:var(--good)"></i></span><span class="cbv">${moneyShort(v.income)}</span></div>
-          <div class="cbrow" style="grid-template-columns:34px 1fr auto"><span class="cbn small muted">Out</span><span class="cbbar"><i style="width:${Math.max(3,Math.round(v.expense/max*100))}%;background:var(--danger)"></i></span><span class="cbv">${moneyShort(v.expense)}</span></div>
-        </div>
-      </div>
-      <div style="text-align:right"><div class="amt ${v.net>=0?'inc':'exp'}">${v.net>=0?'+':'−'}${moneyShort(Math.abs(v.net))}</div><div class="small muted">net ›</div></div>
-    </button>`).join("")}</div>`;
+  const view=window.__repView==='year'?'year':'month';
+  const seg=`<div class="seg mb" id="repSeg"><button data-rep="month" class="${view==='month'?'on':''}">📅 This month</button><button data-rep="year" class="${view==='year'?'on':''}">📆 This year</button></div>`;
+  return view==='year'?reportsYear(seg):reportsMonth(seg);
 }
 function reportsMonth(seg){
   const months=[...new Set(state.transactions.map(t=>monthKey(t.date)))].sort().reverse();
   const sel=(window.__selMonth&&months.includes(window.__selMonth))?window.__selMonth:(months[0]||monthKey());
   const t=monthTotals(sel); const byCat=spendByCat(sel);
-  return `<div class="page-head"><h2>Statistics &amp; Analysis 📊</h2><p>Where your money goes — month by month and across the year.</p></div>${seg}
+  return `<div class="page-head"><h2>Reports 📊</h2><p>Where your money goes — month by month and across the year.</p></div>${seg}
   <div class="card mb"><div class="field" style="margin:0 0 10px"><label>Month</label>
     <select id="monthSel">${(months.length?months:[sel]).map(m=>`<option value="${m}" ${m===sel?'selected':''}>${monthName(m)}</option>`).join("")}</select></div>
     <button class="btn sm secondary" data-act="exportMonth">📥 Export ${monthName(sel)} statement (CSV)</button></div>
   <div class="grid kpi mb">
-    ${kpi("In",moneyShort(t.income),"💰","good")}
-    ${kpi("Out",moneyShort(t.expense),"💸","bad")}
-    ${kpi("Net",moneyShort(t.net),t.net>=0?"🌱":"⚠️",t.net>=0?'good':'bad')}
+    ${kpi("In",money(t.income),"💰","good")}
+    ${kpi("Out",money(t.expense),"💸","bad")}
+    ${kpi("Net",money(t.net),t.net>=0?"🌱":"⚠️",t.net>=0?'good':'bad')}
     ${kpi("Top",byCat[0]?byCat[0].cat.emoji:"—","🏆")}
   </div>
   <div class="card mb"><h3>By category</h3><div class="sub">${monthName(sel)}</div>${catBarsBlock(sel)}</div>
@@ -1464,13 +1115,13 @@ function reportsYear(seg){
   const data=months.map(mk=>({mk,...monthTotals(mk)}));
   const tot=data.reduce((a,b)=>({income:a.income+b.income,expense:a.expense+b.expense}),{income:0,expense:0});
   const years=[...new Set(state.transactions.map(t=>t.date.slice(0,4)))]; if(!years.includes(yr))years.push(yr);
-  return `<div class="page-head"><h2>Statistics &amp; Analysis 📊</h2><p>The big picture for the year.</p></div>${seg}
+  return `<div class="page-head"><h2>Reports 📊</h2><p>The big picture for the year.</p></div>${seg}
   <div class="card mb"><div class="field" style="margin:0"><label>Year</label>
     <select id="yearSel">${years.sort().reverse().map(y=>`<option ${y===yr?'selected':''}>${y}</option>`).join("")}</select></div></div>
   <div class="grid three mb">
-    ${kpi("Total in",moneyShort(tot.income),"💰","good")}
-    ${kpi("Total out",moneyShort(tot.expense),"💸","bad")}
-    ${kpi("Net",moneyShort(tot.income-tot.expense),(tot.income-tot.expense)>=0?"🌱":"⚠️",(tot.income-tot.expense)>=0?'good':'bad')}
+    ${kpi("Total in",money(tot.income),"💰","good")}
+    ${kpi("Total out",money(tot.expense),"💸","bad")}
+    ${kpi("Net",money(tot.income-tot.expense),(tot.income-tot.expense)>=0?"🌱":"⚠️",(tot.income-tot.expense)>=0?'good':'bad')}
   </div>
   <div class="card"><h3>Month by month</h3><div class="sub">Green = in, coral = out</div>${yearBars(data)}</div>`;
 }
@@ -1569,23 +1220,11 @@ function Year(){
 }
 
 /* ---------- CATEGORIES (list + per-category drill-down) ---------- */
-function Tags(){
-  const tags=allTags();
-  const rows=tags.map(g=>{const txs=state.transactions.filter(t=>(t.tags||[]).includes(g));return {g,count:txs.length,spend:sum(txs.filter(t=>t.type==="expense"),t=>+t.amount)};}).sort((a,b)=>b.spend-a.spend);
-  return `
-  <div class="page-head"><h2>Tags 🏷️</h2><p>Labels you've added to transactions — tap to see them.</p></div>
-  <div class="card">${tags.length?`<div class="list">${rows.map(r=>`<div class="tx-line" style="cursor:pointer" onclick="if(window.__hf){window.__hf.tag='${esc(r.g)}';}go('history')"><div class="tx-ic">🏷️</div><div class="tx-main"><div class="tx-t">#${esc(r.g)}</div><div class="tx-s">${r.count} transaction${r.count===1?"":"s"}</div></div><div class="tx-amt exp">${money(r.spend)}</div></div>`).join("")}</div>`:emptyState("🏷️","No tags yet","Add tags to a transaction in the Add page, then they'll show here.")}</div>`;
-}
 function Cats(){
   const trackers=state.categories.filter(isTracker);
+  const normal=state.categories.filter(c=>!isTracker(c));
   const allByCat={}, countByCat={};
   state.transactions.forEach(t=>{allByCat[t.catId]=(allByCat[t.catId]||0)+ +t.amount;countByCat[t.catId]=(countByCat[t.catId]||0)+1;});
-  const tot=id=>allByCat[id]||0, cnt=id=>countByCat[id]||0;
-  const kidsOf=id=>childCats(id).filter(c=>!isTracker(c));
-  const rollup=id=>{const ks=kidsOf(id);return tot(id)+sum(ks,k=>tot(k.id));};
-  const rollupN=id=>{const ks=kidsOf(id);return cnt(id)+sum(ks,k=>cnt(k.id));};
-  const rendered=new Set();
-
   const trackerCard=(c)=>{
     if(c.ledger){
       const {inc,exp,net}=ledgerTotals(c);
@@ -1605,77 +1244,27 @@ function Cats(){
       <div class="bar mt ${pct>=100?'':'warn'}"><i style="width:${pct}%"></i></div></div>
       <div class="amt">${pct}%</div></button>`;
   };
-
-  /* A subcategory (or ungrouped) row: clickable drill-in + edit/delete */
-  const subRow=(c)=>{rendered.add(c.id); const n=cnt(c.id);
-    return `<div class="item" style="margin-left:14px">
-      <div data-catview="${c.id}" style="flex:1;min-width:0;display:flex;align-items:center;gap:12px;cursor:pointer">
-        <div class="emoji">${c.emoji}</div>
-        <div class="main"><div class="t">${esc(c.name)}</div>
-        <div class="s">${n} ${n===1?'entry':'entries'} · ${money(tot(c.id))}</div></div></div>
-      <button class="x" title="Edit" onclick="catEdit('${c.id}')">✎</button>
-      <button class="x" title="Delete" onclick="catDelete('${c.id}')">🗑️</button></div>`;
+  const normalCard=(c)=>{
+    const tot=allByCat[c.id]||0, n=countByCat[c.id]||0;
+    return `<button class="item" data-catview="${c.id}" style="width:100%;text-align:left;cursor:pointer">
+      <div class="emoji">${c.emoji}</div>
+      <div class="main"><div class="t">${esc(c.name)} <span class="tag">${c.type}</span></div>
+      <div class="s">${n} ${n===1?'entry':'entries'} · ${money(tot)} total</div></div>
+      <div class="amt ${c.type==='income'?'inc':'exp'}">›</div></button>`;
   };
-
-  /* A top-level category: header with rollup + nested subcategories */
-  const parentCard=(c)=>{rendered.add(c.id); const ks=kidsOf(c.id); const n=rollupN(c.id);
-    const subs=ks.length?ks.map(subRow).join("")
-      :`<div class="small muted" style="margin-left:14px;padding:4px 0">No subcategories yet.</div>`;
-    return `<div class="card mb">
-      <div class="item" style="border:none;padding:0;background:none">
-        <div data-catview="${c.id}" style="flex:1;min-width:0;display:flex;align-items:center;gap:12px;cursor:pointer">
-          <div class="emoji">${c.emoji}</div>
-          <div class="main"><div class="t">${esc(c.name)} <span class="tag">${c.type}</span></div>
-          <div class="s">${money(rollup(c.id))} total · ${n} ${n===1?'entry':'entries'}${ks.length?' (incl. subs)':''}</div></div></div>
-        <button class="x" title="Edit" onclick="catEdit('${c.id}')">✎</button>
-        <button class="x" title="Delete" onclick="catDelete('${c.id}')">🗑️</button></div>
-      <div class="list mt" style="border-left:2px solid var(--line);padding-left:8px">${subs}
-        <button class="btn sm secondary" style="margin-top:8px" onclick="catAddSub('${c.id}')">＋ Add subcategory</button></div>
-    </div>`;
-  };
-
-  const group=(type,label)=>{
-    const tops=topCats(type).filter(c=>!isTracker(c));
-    if(!tops.length) return "";
-    return `<h3 style="margin:16px 2px 8px">${label}</h3>${tops.map(parentCard).join("")}`;
-  };
-
-  const expSec=group('expense','Expense categories');
-  const incSec=group('income','Income categories');
-  /* Anything left (e.g. a subcategory whose parent is a tracker or was removed) — never lose it */
-  const orphans=state.categories.filter(c=>!isTracker(c)&&!rendered.has(c.id));
-  const orphanSec=orphans.length?`<div class="card mb"><h3>Other</h3><div class="list mt">${orphans.map(subRow).join("")}</div></div>`:"";
-  const anyNormal=expSec||incSec||orphans.length;
-
   return `
-  <div class="page-head"><h2>Categories 📂</h2><p>Main categories with their subcategories nested beneath. Tap any to see all its transactions.</p></div>
-  ${trackers.length?`<div class="card mb"><div class="flex"><h3>Trackers</h3></div>
+  <div class="page-head"><h2>Categories 📂</h2><p>Tap any category to see all its transactions.</p></div>
+  ${trackers.length?`<div class="card mb"><div class="flex"><h3>Trackers</h3><button class="btn sm secondary right" data-act="addCat">＋ Add</button></div>
     <div class="sub">Contracts, balances and ledgers — kept separate from your monthly cashflow.</div>
     <div class="list mt">${trackers.map(trackerCard).join("")}</div></div>`:""}
-  <div class="flex" style="margin:4px 2px 0"><h3>Categories</h3><button class="btn sm secondary right" data-act="addCat">＋ Add category</button></div>
-  ${anyNormal?`${expSec}${incSec}${orphanSec}`:`<div class="card">${emptyState("📂","No categories","Add one to get started.")}</div>`}`;
+  <div class="card"><div class="flex"><h3>All categories</h3>${trackers.length?'':`<button class="btn sm secondary right" data-act="addCat">＋ Add</button>`}</div>
+    <div class="list mt">${normal.length?normal.map(normalCard).join(""):emptyState("📂","No categories","Add one to get started.")}</div></div>`;
 }
-
 function CatView(){
-  const c=catById(selCat);
-  if(!c) return `<button class="btn sm secondary mb" data-go="cats">‹ All categories</button>
-    <div class="card">${emptyState("📂","Category not found","It may have been deleted.")}</div>`;
-  const kids=childCats(selCat); const tracker=isTracker(c);
-  const ids=[selCat,...kids.map(k=>k.id)];
-  const tx=kids.length
-    ? state.transactions.filter(t=>ids.includes(t.catId)).sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id))
-    : catTx(selCat);
+  const c=catById(selCat); const tx=catTx(selCat); const tracker=isTracker(c);
   const paid=sum(tx,t=>+t.amount);
-  const parent=catParentOf(selCat);
-  const subtitle=c.ledger?'Ledger — money in and out'
-    :tracker?'Payment tracker'
-    :`${c.type==='income'?'Income':'Expense'} category${kids.length?` · ${kids.length} subcategor${kids.length===1?'y':'ies'}`:''}${parent?` · under ${esc(parent.name)}`:''}`;
   const head=`<button class="btn sm secondary mb" data-go="cats">‹ All categories</button>
-    <div class="page-head"><h2>${c.emoji} ${esc(c.name)}</h2><p>${subtitle}.</p>
-    <div style="margin-top:6px;display:flex;gap:8px;flex-wrap:wrap">
-      <button class="btn sm secondary" onclick="catEdit('${c.id}')">✎ Edit</button>
-      ${tracker?'':`<button class="btn sm secondary" onclick="catAddSub('${c.id}')">＋ Subcategory</button>`}
-      <button class="btn sm secondary" onclick="catDelete('${c.id}')">🗑️ Delete</button></div></div>`;
+    <div class="page-head"><h2>${c.emoji} ${esc(c.name)}</h2><p>${c.ledger?'Ledger — money in and out':(tracker?'Payment tracker':(c.type==='income'?'Income category':'Expense category'))}.</p></div>`;
   let summary="";
   if(c.ledger){
     const {inc,exp,net}=ledgerTotals(c);
@@ -1694,27 +1283,9 @@ function CatView(){
     </div>
     <div class="card mb"><div class="bar ${pct>=100?'':'warn'}"><i style="width:${pct}%"></i></div>
       <div class="small muted" style="margin-top:8px">${pct}% ${c.type==='income'?'received':'paid'}${rem>0?` · ${money(rem,c.cur)} to go`:' · complete 🎉'}</div></div>`;
-  } else if(kids.length){
-    /* Parent rollup: total across itself + children, and a per-subcategory breakdown */
-    const brk=[{id:selCat,name:esc(c.name)+' <span class="tag">direct</span>',emoji:c.emoji},
-      ...kids.map(k=>({id:k.id,name:esc(k.name),emoji:k.emoji}))]
-      .map(r=>{const rt=sum(tx.filter(t=>t.catId===r.id),t=>+t.amount); const rn=tx.filter(t=>t.catId===r.id).length;
-        return `<div class="item"><div class="emoji">${r.emoji}</div>
-          <div class="main"><div class="t">${r.name}</div><div class="s">${rn} ${rn===1?'entry':'entries'}</div></div>
-          <div class="amt ${c.type==='income'?'inc':'exp'}">${money(rt)}</div></div>`;}).join("");
-    summary=`<div class="grid three mb">
-      ${kpi("Total",money(paid),c.type==='income'?'📥':'📤',c.type==='income'?'good':'bad')}
-      ${kpi("Subcategories",String(kids.length),"🗂️")}
-      ${kpi("Entries",String(tx.length),"🧾")}
-    </div>
-    <div class="card mb"><div class="flex"><h3>By subcategory</h3></div><div class="list mt">${brk}</div></div>`;
   }
-  const list=tx.length? tx.slice().reverse().map(t=>{
-      const own=catById(t.catId); const tt=c.ledger?t.type:((own||c).type);
-      const isChild=kids.length&&own&&own.id!==c.id;
-      const lbl=esc(t.note)||(isChild?esc(own.name):(tracker&&!c.ledger?'Payment':c.name));
-      return `<div class="item">
-      <div class="main"><div class="t">${lbl}</div><div class="s">${prettyDate(t.date)}${isChild?` · ${esc(own.name)}`:''}</div></div>
+  const list=tx.length? tx.slice().reverse().map(t=>{const tt=c.ledger?t.type:c.type;return `<div class="item">
+      <div class="main"><div class="t">${esc(t.note)||(tracker&&!c.ledger?'Payment':c.name)}</div><div class="s">${prettyDate(t.date)}</div></div>
       <div class="amt ${tt==='income'?'inc':'exp'}">${tt==='income'?'+':'−'}${money(t.amount,c.cur)}</div>
       <button class="x" data-edittx="${t.id}">✎</button></div>`;}).join("")
     : emptyState("🗒️","No transactions yet","Add the first one below.");
@@ -1722,206 +1293,6 @@ function CatView(){
     <div class="card"><div class="flex"><h3>${tracker&&!c.ledger?'Payments':'Transactions'} (${tx.length})</h3>
       <button class="btn sm secondary right" data-addcattx="${c.id}">＋ Add ${tracker&&!c.ledger?'payment':'entry'}</button></div>
       <div class="list mt">${list}</div></div>`;
-}
-
-/* ---------- Category create / edit / delete (called via inline onclick from Cats & CatView) ---------- */
-function catAddSub(parentId){
-  const p=catById(parentId); if(!p) return toast("Category not found");
-  openModal(`<h3>New subcategory</h3>
-    <div class="sub">Under <b>${esc(p.name)}</b> · ${p.type}</div>
-    <div class="row"><div class="field" style="flex:2"><label>Name</label><input id="scName" placeholder="e.g. Groceries" autofocus/></div>
-    <div class="field"><label>Emoji</label><input id="scEmoji" placeholder="📦" maxlength="2"/></div></div>
-    <button class="btn" id="scSave">Add subcategory</button>`);
-  $("#scSave").onclick=()=>{
-    const name=$("#scName").value.trim(); if(!name) return toast("Name needed");
-    state.categories.push({id:uid(),name,emoji:($("#scEmoji").value||"📦").trim(),type:p.type,parentId:p.id,budget:0,_m:stampNow()});
-    save();closeModal();render();toast("Subcategory added ✓");
-  };
-}
-function catEdit(id){
-  const c=catById(id); if(!c) return toast("Category not found");
-  const parent=catParentOf(id);
-  openModal(`<h3>Edit category ✎</h3>
-    ${parent?`<div class="sub">Subcategory of <b>${esc(parent.name)}</b></div>`:''}
-    <div class="row"><div class="field" style="flex:2"><label>Name</label><input id="ecName" value="${esc(c.name)}" autofocus/></div>
-    <div class="field"><label>Emoji</label><input id="ecEmoji" value="${esc(c.emoji||'')}" maxlength="2"/></div></div>
-    <button class="btn" id="ecSave">Save</button>`);
-  $("#ecSave").onclick=()=>{
-    const name=$("#ecName").value.trim(); if(!name) return toast("Name needed");
-    c.name=name; c.emoji=($("#ecEmoji").value||c.emoji||"📦").trim(); c._m=stampNow();
-    save();closeModal();render();toast("Saved ✓");
-  };
-}
-function catDelete(id){
-  const c=catById(id); if(!c) return toast("Category not found");
-  const kids=childCats(id);
-  const ownTx=state.transactions.filter(t=>t.catId===id);
-  const promote=()=>{kids.forEach(k=>{delete k.parentId; k._m=stampNow();});};
-  const removeCat=()=>{tomb(id); state.categories=state.categories.filter(x=>x.id!==id);};
-  const finish=()=>{save();closeModal();if(selCat===id)go("cats");else render();};
-  if(!ownTx.length){
-    openModal(`<h3>Delete “${esc(c.name)}”?</h3>
-      <p class="small muted">${kids.length?`Its ${kids.length} subcategor${kids.length===1?'y':'ies'} will move up to top-level (not deleted). `:''}This can't be undone.</p>
-      <div class="flex mt"><button class="btn danger" id="dcYes">Delete</button><button class="btn secondary" id="dcNo">Cancel</button></div>`);
-    $("#dcYes").onclick=()=>{promote();removeCat();finish();toast("Deleted");};
-    $("#dcNo").onclick=closeModal;
-    return;
-  }
-  /* Has transactions → block a plain delete; require reassigning them first */
-  const targets=state.categories.filter(x=>x.id!==id && x.type===c.type);
-  const opts=targets.map(x=>`<option value="${x.id}">${esc((catParentOf(x.id)?'↳ ':'')+x.name)}</option>`).join("");
-  openModal(`<h3>“${esc(c.name)}” has ${ownTx.length} transaction${ownTx.length===1?'':'s'}</h3>
-    <p class="small muted">Move ${ownTx.length===1?'it':'them'} to another ${c.type} category, then delete.${kids.length?` Its ${kids.length} subcategor${kids.length===1?'y moves':'ies move'} up to top-level.`:''}</p>
-    ${targets.length?`<div class="field"><label>Move transactions to</label><select id="dcTo">${opts}</select></div>
-      <div class="flex mt"><button class="btn danger" id="dcMove">Move & delete</button><button class="btn secondary" id="dcNo">Cancel</button></div>`
-      :`<p class="small muted">There's no other ${c.type} category to move them to — create one first, then this category can be deleted.</p>
-        <div class="flex mt"><button class="btn secondary" id="dcNo">OK</button></div>`}`);
-  if(targets.length){
-    $("#dcMove").onclick=()=>{
-      const to=$("#dcTo").value; if(!to) return;
-      state.transactions.forEach(t=>{if(t.catId===id){t.catId=to; t._m=stampNow();}});
-      promote();removeCat();finish();toast(`Moved ${ownTx.length} & deleted`);
-    };
-  }
-  $("#dcNo").onclick=closeModal;
-}
-
-/* ---------- VILLA DETAIL (drill-down from Business / Reports) ---------- */
-
-/* one row for a villa-tagged transaction — handles income/expense normally, and shows a
-   villa-tagged transfer as a neutral (non P&L) line instead of mis-coloring it as an expense. */
-function villaTxRow(t){
-  const c=catById(t.catId);
-  const isTransfer=t.type==="transfer";
-  const inc=t.type==="income";
-  const chips=tagChips(t.tags);
-  const title=isTransfer?transferLabel(t):(esc(t.note)||esc(c.name));
-  const sub=isTransfer?`Transfer (not P&L) · ${prettyDate(t.date)}`:`${c.name} · ${prettyDate(t.date)}`;
-  const cls=isTransfer?'tf':(inc?'inc':'exp');
-  const sign=isTransfer?'':(inc?'+':'−');
-  return `<div class="tx-line">
-    <div class="tx-ic">${isTransfer?'🔁':c.emoji}</div>
-    <div class="tx-main">
-      <div class="tx-t">${title}</div>
-      <div class="tx-s">${sub}</div>
-      ${chips?`<div style="margin-top:4px">${chips}</div>`:''}
-    </div>
-    <div class="tx-amt ${cls}" style="max-width:38%;overflow:hidden;text-overflow:ellipsis" title="${money(t.amount)}">${sign}${money(t.amount)}</div>
-    <button class="x" data-edittx="${t.id}" title="Edit" style="font-size:15px;flex-shrink:0">✎</button>
-  </div>`;
-}
-function VillaView(){
-  const v=(state.villas||[]).find(x=>x.id===selVilla);
-  const head=`<button class="btn sm secondary mb" data-go="biz">‹ Villas & Investors</button>`;
-  if(!v) return head+`<div class="card">${emptyState("🏝️","Villa not found","It may have been deleted.")}</div>`;
-  const tg=villaTagTotals(v.id);
-  const income=(+v.income||0)+tg.inc, expense=(+v.expense||0)+tg.exp, net=income-expense;
-  const tx=villaTx(v.id);
-  const catSpend=villaCatSpend(v.id);
-  const meta=[ v.code?esc(v.code):null, (v.owner&&v.owner!=='TVM')?`Owner: ${esc(v.owner)}`:null,
-               v.rentYear?`Rent ${money(v.rentYear)}/yr`:null, v.status?esc(v.status):null ].filter(Boolean).join(' · ');
-  const manualNote=((+v.income||0)||(+v.expense||0))?`<div class="small muted mt">Includes manual totals logged via ＋ Log (In ${money(v.income||0)} · Out ${money(v.expense||0)}) plus ${tx.length} tagged transaction${tx.length===1?'':'s'}.</div>`:'';
-  const list=tx.length? tx.slice(0,40).map(villaTxRow).join("")
-    : emptyState("🗒️","No tagged transactions","Tag a villa when you Add income or an expense, or use ＋ Log.");
-  return `${head}
-    <div class="page-head"><h2>${v.emoji||'🏝️'} ${esc(v.name)}</h2><p style="overflow-wrap:anywhere">${meta||'Per-property profit & loss.'}</p></div>
-    <div class="grid three mb">
-      ${kpi("Income",money(income),"📥","good")}
-      ${kpi("Expenses",money(expense),"📤","bad")}
-      ${kpi("Net profit",(net>=0?'+':'−')+money(Math.abs(net)),net>=0?"🌱":"⚠️",net>=0?'good':'bad')}
-    </div>
-    <div class="flex wrap mb" style="gap:8px">
-      <button class="btn sm" data-villaio="${v.id}">＋ Log income / cost</button>
-      <button class="btn sm secondary" data-go="add">Add tagged transaction</button>
-    </div>
-    ${v.note?`<div class="card mb"><h3>Notes</h3><p class="small muted" style="white-space:pre-wrap;margin:6px 0 0;overflow-wrap:anywhere">${esc(v.note)}</p></div>`:''}
-    <div class="card mb"><h3>Expenses by category</h3><div class="sub">Tagged costs for this villa · tap to drill in</div>${catBarsFromData(catSpend)}</div>
-    <div class="card"><div class="flex"><h3>Transactions (${tx.length})</h3></div>
-      ${manualNote}
-      <div class="mt">${list}</div></div>`;
-}
-
-/* ---------- ACCOUNT DETAIL (drill-down from Home / Accounts) ---------- */
-/* every transaction touching this account, from either side of a transfer.
-   acctTx(aid) only matches t.acctId (expense/income/transfer-FROM); a transfer where this
-   account is the destination only carries toAcctId, so it's merged in separately. */
-function acctTxAll(aid){
-  const own=acctTx(aid);
-  const inboundTransfers=(state.transactions||[]).filter(t=>t.type==="transfer"&&t.toAcctId===aid&&t.acctId!==aid);
-  return [...own,...inboundTransfers].sort((x,y)=>y.date.localeCompare(x.date)||(y._m||0)-(x._m||0));
-}
-/* one row for an account transaction — transfers show direction (in/out) + transferLabel
-   instead of a category, and always affect this account's in/out KPIs. */
-function acctTxRow(t,aid){
-  const isTransfer=t.type==="transfer";
-  const isInboundTransfer=isTransfer&&t.toAcctId===aid;
-  const inc=t.type==="income"||isInboundTransfer;
-  const c=catById(t.catId);
-  const v=t.villaId?(state.villas||[]).find(x=>x.id===t.villaId):null;
-  const title=isTransfer?transferLabel(t):(esc(t.note)||esc(c.name));
-  const sub=isTransfer?`${isInboundTransfer?'Transfer in':'Transfer out'} · ${prettyDate(t.date)}`
-                      :`${c.name} · ${prettyDate(t.date)}${v?` · ${v.emoji||'🏠'} ${esc(v.name)}`:''}`;
-  return `<div class="tx-line">
-    <div class="tx-ic">${isTransfer?'🔁':c.emoji}</div>
-    <div class="tx-main">
-      <div class="tx-t">${title}</div>
-      <div class="tx-s">${sub}</div>
-    </div>
-    <div class="tx-amt ${inc?'inc':'exp'}" style="max-width:38%;overflow:hidden;text-overflow:ellipsis" title="${money(t.amount)}">${inc?'+':'−'}${money(t.amount)}</div>
-    <button class="x" data-edittx="${t.id}" title="Edit" style="font-size:15px;flex-shrink:0">✎</button>
-  </div>`;
-}
-function Accounts(){
-  const accs=state.accounts||[];
-  const totalAssets=sum(accs.filter(a=>(+a.amount||0)>=0),a=>(+a.amount||0)*(a.currency==='EUR'?eurRate():1));
-  const totalLiab=Math.abs(sum(accs.filter(a=>(+a.amount||0)<0),a=>(+a.amount||0)*(a.currency==='EUR'?eurRate():1)));
-  const net=totalAssets-totalLiab;
-  return `
-  <div class="page-head"><h2>Accounts 🏦</h2><p>Your real cash across every account.</p></div>
-  <div class="card mb">
-    <div class="asset-sum">
-      <div class="as-b"><div class="as-l">Net assets</div><div class="as-v">${moneyShort(net)}</div></div>
-      <div class="as-b"><div class="as-l">Total assets</div><div class="as-v" style="color:var(--good)">${moneyShort(totalAssets)}</div></div>
-      <div class="as-b"><div class="as-l">Liabilities</div><div class="as-v" style="color:var(--danger)">${moneyShort(totalLiab)}</div></div>
-    </div>
-    <button class="btn secondary mt" data-act="editAccounts">✎ Edit balances &amp; EUR rate</button>
-  </div>
-  <div class="card">
-    <div class="flex"><h3>All accounts</h3><span class="right small muted">${accs.length}</span></div>
-    <div class="list mt">${accs.length?accs.map(a=>{
-      const idr=(+a.amount||0)*(a.currency==='EUR'?eurRate():1);
-      return `<div class="tx-line" style="cursor:pointer" onclick="selAcct='${a.id}';go('acctview')"><div class="tx-ic">🏦</div><div class="tx-main"><div class="tx-t">${esc(a.name)}</div><div class="tx-s">${a.currency==='EUR'?'EUR account':'Rupiah account'}</div></div><div class="tx-amt ${idr>=0?'inc':'exp'}">${a.currency==='EUR'?'€'+(+a.amount||0).toLocaleString('id-ID')+' · ':''}${money(idr)}</div></div>`;
-    }).join(""):emptyState("🏦","No accounts yet","Add them from Setup.")}</div>
-  </div>`;
-}
-function AcctView(){
-  const a=(state.accounts||[]).find(x=>x.id===selAcct);
-  const head=`<button class="btn sm secondary mb" data-go="home">‹ Home</button>`;
-  if(!a) return head+`<div class="card">${emptyState("🏦","Account not found","It may have been removed.")}</div>`;
-  const tx=acctTxAll(a.id);
-  const inc=sum(tx.filter(t=>t.type==="income"),t=>+t.amount)
-          + sum(tx.filter(t=>t.type==="transfer"&&t.toAcctId===a.id),t=>+t.amount);
-  const exp=sum(tx.filter(t=>t.type==="expense"),t=>+t.amount)
-          + sum(tx.filter(t=>t.type==="transfer"&&t.acctId===a.id),t=>+t.amount);
-  const idr=(+a.amount||0)*(a.currency==="EUR"?eurRate():1);
-  const balLine=a.currency==="EUR"?`€${(+a.amount||0).toLocaleString('id-ID')} · ${money(idr)}`:money(idr);
-  /* show money-in/out in the account's own currency so it matches the balance unit (fixes EUR mismatch) */
-  const acur=(v)=>a.currency==="EUR"?`€${Math.round(v/eurRate()).toLocaleString('id-ID')}`:money(v);
-  const list=tx.length? tx.slice(0,60).map(t=>acctTxRow(t,a.id)).join("")
-    : emptyState("🗒️","No transactions on this account","When you Add money, pick this account to see it here.");
-  return `${head}
-    <div class="page-head"><h2>🏦 ${esc(a.name)}</h2><p>Current balance and every transaction linked to this account, including transfers.</p></div>
-    <div class="grid three mb">
-      ${kpi("Balance",balLine,"💰",idr>=0?'good':'bad')}
-      ${kpi("Money in",acur(inc),"📥","good")}
-      ${kpi("Money out",acur(exp),"📤","bad")}
-    </div>
-    <div class="flex wrap mb" style="gap:8px">
-      <button class="btn sm secondary" data-act="editAccounts">Edit balances</button>
-      <button class="btn sm secondary" data-go="add">Add transaction</button>
-    </div>
-    <div class="card"><div class="flex"><h3>Transactions (${tx.length})</h3></div>
-      <div class="mt">${list}</div></div>`;
 }
 
 /* ---------- SETUP ---------- */
@@ -1938,12 +1309,6 @@ function Setup(){
       <div class="field"><label>Monthly income</label><input id="sInc" type="number" inputmode="decimal" value="${s.monthlyIncome||''}" placeholder="0" /></div>
     </div>
     <button class="btn" data-act="saveSettings">Save basics</button>
-  </div>
-  <div class="card mb">
-    <h3>💱 Multi-currency</h3>
-    <div class="sub">The EUR → Rp rate drives how EUR accounts (like Wise) convert into your total Rupiah balance everywhere in the app.</div>
-    <div class="flex wrap small muted" style="justify-content:space-between;gap:6px"><span>Current rate</span><span><b>1 EUR = ${money(eurRate(),'Rp')}</b></span></div>
-    ${hasAccounts()?`<button class="btn sm secondary mt" data-act="editAccounts">✏️ Edit accounts & rate</button>`:`<div class="small muted mt">Add bank accounts from your Home balance card to enable multi-currency.</div>`}
   </div>
   <div class="card">
     <div class="flex"><h3>Categories & budgets</h3><button class="btn sm secondary right" data-act="addCat">＋ Category</button></div>
@@ -1994,23 +1359,12 @@ function Backup(){
 /* ===================== SHARED UI BITS ===================== */
 function kpi(label,val,icon,tone){return `<div class="kpi-card"><div class="label">${icon} ${label}</div><div class="val ${tone==='bad'?'':''}" style="${tone==='good'?'color:var(--good)':tone==='bad'?'color:var(--danger)':''}">${val}</div></div>`;}
 function txRow(t){
+  const c=catById(t.catId);const inc=t.type==="income";
   const v=t.villaId?(state.villas||[]).find(x=>x.id===t.villaId):null;
   const vtag=v?` · ${v.emoji||'🏠'} ${esc(v.name)}`:'';
-  const chips=(t.tags&&t.tags.length)?`<div style="margin-top:3px">${tagChips(t.tags)}</div>`:'';
-  if(t.type==="transfer"){
-    return `<div class="item">
-      <div class="emoji">🔁</div>
-      <div class="main"><div class="t">${esc(t.note)||'Transfer'}</div><div class="s">${transferLabel(t)} · ${prettyDate(t.date)}${vtag}</div>${chips}</div>
-      <div class="amt tf" style="color:var(--ink-soft)">${money(t.amount)}</div>
-      <button class="x" data-edittx="${t.id}" title="Edit" style="font-size:15px">✎</button>
-    </div>`;
-  }
-  const c=catById(t.catId);const inc=t.type==="income";
-  const parent=catParentOf(t.catId);
-  const catLabel=parent?`${parent.name} › ${c.name}`:c.name;
   return `<div class="item">
     <div class="emoji">${c.emoji}</div>
-    <div class="main"><div class="t">${esc(t.note)||c.name}</div><div class="s">${esc(catLabel)} · ${prettyDate(t.date)}${vtag}</div>${chips}</div>
+    <div class="main"><div class="t">${esc(t.note)||c.name}</div><div class="s">${c.name} · ${prettyDate(t.date)}${vtag}</div></div>
     <div class="amt ${inc?'inc':'exp'}">${inc?'+':'−'}${money(t.amount)}</div>
     <button class="x" data-edittx="${t.id}" title="Edit" style="font-size:15px">✎</button>
   </div>`;
@@ -2019,96 +1373,32 @@ function emptyState(big,t,s){return `<div class="empty"><span class="big">${big}
 function editTx(id){
   const t=state.transactions.find(x=>x.id===id); if(!t) return;
   let et=t.type;
-  const parentSel = (t.catId && catParentOf(t.catId)) ? catParentOf(t.catId).id : (t.catId||"");
-  const childSel  = (t.catId && catParentOf(t.catId)) ? t.catId : "";
-  const parentOpts=ty=>topCats(ty).map(c=>`<option value="${c.id}" ${c.id===parentSel?'selected':''}>${c.emoji} ${esc(c.name)}</option>`).join("");
-  const childOpts=(pid,selId)=>{const kids=childCats(pid);return `<option value="">${kids.length?'— optional —':'— none —'}</option>`+kids.map(c=>`<option value="${c.id}" ${c.id===selId?'selected':''}>${c.emoji} ${esc(c.name)}</option>`).join("");};
-  const eiType=et==='transfer'?'expense':et;
-  const pForChild=parentSel||((topCats(eiType)[0]||{}).id||"");
-  const tagsList=allTags();
-  const _accs=state.accounts||[]; const acc0=(_accs[0]||{}).id, acc1=(_accs[1]||_accs[0]||{}).id;
+  const catOpts=ty=>state.categories.filter(c=>c.type===ty).map(c=>`<option value="${c.id}" ${c.id===t.catId?'selected':''}>${c.emoji} ${esc(c.name)}</option>`).join("");
   openModal(`<h3>Edit entry ✎</h3>
-    <div class="seg tri mb" id="etSeg">
+    <div class="seg mb" id="etSeg">
       <button data-ettype="expense" class="${et==='expense'?'on exp':''}">➖ Expense</button>
       <button data-ettype="income" class="${et==='income'?'on inc':''}">➕ Income</button>
-      <button data-ettype="transfer" class="${et==='transfer'?'on tf':''}">🔁 Transfer</button>
     </div>
     <div class="row">
       <div class="field" style="flex:1.2"><label>Amount</label><input id="etAmt" type="number" inputmode="decimal" value="${+t.amount||''}"/></div>
       <div class="field"><label>Date</label><input id="etDate" type="date" value="${t.date}"/></div>
     </div>
-    <div id="etEi" style="${et==='transfer'?'display:none':''}">
-      <div class="row">
-        <div class="field"><label>Category</label><select id="etCatParent">${parentOpts(eiType)}</select></div>
-        <div class="field"><label>Subcategory</label><select id="etCatChild">${childOpts(pForChild,childSel)}</select></div>
-      </div>
-      ${hasAccounts()?`<div class="field"><label>Account <span style="color:var(--muted);font-weight:400">— balance updates</span></label><select id="etAcct">${acctOptions(t.acctId||"")}<option value="" ${!t.acctId?'selected':''}>— don't change balance —</option></select></div>`:`<div class="field"><label>Bank (optional)</label><input id="etBank" list="bankList" value="${esc(t.bank||'')}" placeholder="Bank"/><datalist id="bankList"><option>BCA</option><option>Permata</option><option>CIMB Niaga</option><option>Jago</option><option>Wise</option></datalist></div>`}
-    </div>
-    <div id="etTf" style="${et==='transfer'?'':'display:none'}">
-      ${hasAccounts()?`<div class="row">
-        <div class="field"><label>From</label><select id="etFrom">${acctOptions(t.acctId||acc0)}</select></div>
-        <div class="field"><label>To</label><select id="etTo">${acctOptions(t.toAcctId||acc1)}</select></div>
-      </div>`:`<p class="small muted">Add accounts first to move money between them.</p>`}
-    </div>
+    <div class="field"><label>Category</label><select id="etCat">${catOpts(et)}</select></div>
     ${(state.villas||[]).length?`<div class="field"><label>Villa / project</label><select id="etVilla">${villaOptions(t.villaId||"")}</select></div>`:''}
-    <div class="field"><label>Tags</label>
-      <div class="tag-input-row"><input id="etTags" value="${esc((t.tags||[]).join(', '))}" placeholder="comma or space separated"/></div>
-      ${tagsList.length?`<div class="chip-row" id="etTagSug" style="margin-top:6px">${tagsList.map(g=>`<button type="button" class="chip" data-tag="${esc(g)}">${esc(g)}</button>`).join("")}</div>`:''}
-    </div>
+    <div class="field"><label>Bank (optional)</label><input id="etBank" list="bankList" value="${esc(t.bank||'')}" placeholder="Bank"/><datalist id="bankList"><option>BCA</option><option>Permata</option><option>CIMB Niaga</option><option>Jago</option><option>Wise</option></datalist></div>
     <div class="field"><label>Note</label><input id="etNote" value="${esc(t.note||'')}"/></div>
-    <div class="flex" style="gap:8px">
-      <button class="btn" id="etSave" style="flex:1">Save changes</button>
-      <button class="btn danger" id="etDel" title="Delete entry">🗑️</button>
-    </div>`);
-  const syncEtChild=()=>{const p=$("#etCatParent"),cc=$("#etCatChild");if(!p||!cc)return;cc.innerHTML=childOpts(p.value,"");};
+    <button class="btn" id="etSave">Save changes</button>`);
   $$("#modal [data-ettype]").forEach(b=>b.onclick=()=>{
     et=b.dataset.ettype;
-    $$("#modal [data-ettype]").forEach(x=>x.className=x.dataset.ettype===et?(et==='expense'?'on exp':et==='income'?'on inc':'on tf'):'');
-    const isTf=et==='transfer';
-    $("#etEi").style.display=isTf?'none':'';
-    $("#etTf").style.display=isTf?'':'none';
-    if(!isTf){const p=$("#etCatParent");if(p){p.innerHTML=topCats(et).map(c=>`<option value="${c.id}">${c.emoji} ${esc(c.name)}</option>`).join("");syncEtChild();}}
+    $$("#modal [data-ettype]").forEach(x=>x.className=x.dataset.ettype===et?(et==='expense'?'on exp':'on inc'):'');
+    $("#etCat").innerHTML=catOpts(et);
   });
-  const etpc=$("#etCatParent"); if(etpc) etpc.onchange=syncEtChild;
-  const etsug=$("#etTagSug"); if(etsug) etsug.onclick=ev=>{const b=ev.target.closest("[data-tag]");if(!b)return;const inp=$("#etTags");const cur=inp.value.split(/[,]/).map(s=>s.trim()).filter(Boolean);if(!cur.includes(b.dataset.tag)){cur.push(b.dataset.tag);inp.value=cur.join(", ");}b.classList.toggle("on");inp.focus();};
-  $("#etDel").onclick=()=>{
-    if(t.type==='transfer') applyTransfer(t.acctId,t.toAcctId,+t.amount,-1);
-    else acctDelta(t.acctId,t.type,+t.amount,-1);
-    const i=state.transactions.findIndex(x=>x.id===t.id);
-    if(i>=0) state.transactions.splice(i,1);
-    if(typeof tomb==='function') tomb(t.id);
-    save(); closeModal(); render(); toast("Deleted");
-  };
   $("#etSave").onclick=()=>{
     const amt=+$("#etAmt").value; if(!amt||amt<=0) return toast("Enter an amount");
-    const newType=et;
-    let from,to,newCat,newAcct,newBank;
-    if(newType==='transfer'){
-      from=$("#etFrom")?$("#etFrom").value:""; to=$("#etTo")?$("#etTo").value:"";
-      if(!from||!to) return toast("Pick both accounts");
-      if(from===to) return toast("Pick two different accounts");
-    }else{
-      newCat=($("#etCatChild")&&$("#etCatChild").value)||($("#etCatParent")?$("#etCatParent").value:"")||"";
-      newAcct=$("#etAcct")?$("#etAcct").value:(t.acctId||"");
-      newBank=$("#etBank")?$("#etBank").value.trim():(t.bank||"");
-    }
-    // reverse the OLD effect
-    if(t.type==='transfer') applyTransfer(t.acctId,t.toAcctId,+t.amount,-1);
-    else acctDelta(t.acctId,t.type,+t.amount,-1);
-    // write NEW values
-    t.type=newType; t.amount=amt; t.date=$("#etDate").value||t.date;
+    t.type=et; t.amount=amt; t.date=$("#etDate").value||t.date; t.catId=$("#etCat").value;
     t.villaId=$("#etVilla")?$("#etVilla").value:(t.villaId||"");
-    t.tags=[...new Set(($("#etTags")?$("#etTags").value:"").split(/[,\s]+/).map(s=>s.trim()).filter(Boolean))];
-    t.note=$("#etNote")?$("#etNote").value.trim():"";
-    if(newType==='transfer'){
-      t.acctId=from; t.toAcctId=to; t.catId=""; t.bank="";
-      applyTransfer(from,to,amt,1);
-    }else{
-      t.catId=newCat; t.toAcctId=""; t.acctId=newAcct; t.bank=newBank;
-      acctDelta(newAcct,newType,amt,1);
-    }
-    t._m=stampNow();
-    // apply the NEW effect
+    t.bank=$("#etBank")?$("#etBank").value.trim():(t.bank||"");
+    t.note=$("#etNote").value.trim(); t._m=Date.now();
     save(); closeModal(); render(); toast("Updated ✓");
   };
 }
@@ -2125,13 +1415,13 @@ function upcomingCard(){
 }
 
 /* ---------- SVG charts ---------- */
-const PALETTE=["#E5705A","#E8A13C","#4BAE9A","#C67E48","#7FB84E","#5B8FD4","#C77DBB","#E0C04A","#6C9C8E","#B98A5E","#8E7BD0","#9AA85A"];
+const PALETTE=["#0F6E56","#E08A3C","#5B8DEF","#C5503B","#8E6FD0","#2E8B6F","#D99A2E","#5AA9A2","#C46FA0","#7A8B5A","#B98A5E","#6C7B8B"];
 function chartColor(i){return PALETTE[i%PALETTE.length];}
-function donutFromData(data){
-  const total=sum(data,d=>d.val);
+function donutBlock(mk){
+  const data=spendByCat(mk); const total=sum(data,d=>d.val);
   if(!total) return emptyState("🍩","Nothing spent yet","Log expenses to see the breakdown.");
   const top=data.slice(0,6);const rest=data.slice(6);
-  if(rest.length) top.push({cat:{name:"Other",emoji:"📦"},val:sum(rest,r=>r.val),id:null});
+  if(rest.length) top.push({cat:{name:"Other",emoji:"📦"},val:sum(rest,r=>r.val)});
   let acc=0;const R=52,C=2*Math.PI*R;
   const segs=top.map((d,i)=>{
     const frac=d.val/total;const dash=frac*C;const seg=`<circle r="${R}" cx="70" cy="70" fill="none" stroke="${chartColor(i)}" stroke-width="22" stroke-dasharray="${dash} ${C-dash}" stroke-dashoffset="${-acc*C}" transform="rotate(-90 70 70)"/>`;
@@ -2141,20 +1431,18 @@ function donutFromData(data){
     <svg width="210" height="210" viewBox="0 0 140 140" style="max-width:100%">${segs}
       <text x="70" y="66" text-anchor="middle" font-size="10" fill="var(--ink-soft)">Spent</text>
       <text x="70" y="82" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">${money(total)}</text></svg>
-    <div class="legend" style="width:100%">${top.map((d,i)=>`<div class="li" ${d.id?`data-catview="${d.id}" style="cursor:pointer"`:''}><span class="sw" style="background:${chartColor(i)}"></span><span class="nm">${d.cat.emoji} ${d.cat.name}</span><span class="vl">${money(d.val)} · ${Math.round(d.val/total*100)}%</span></div>`).join("")}</div>
+    <div class="legend" style="width:100%">${top.map((d,i)=>`<div class="li"><span class="sw" style="background:${chartColor(i)}"></span><span class="nm">${d.cat.emoji} ${d.cat.name}</span><span class="vl">${Math.round(d.val/total*100)}%</span></div>`).join("")}</div>
   </div>`;
 }
-function donutBlock(mk){return donutFromData(spendByCat(mk));}
-function catBarsFromData(data){
-  const total=sum(data,d=>d.val);
+function catBarsBlock(mk){
+  const data=spendByCat(mk); const total=sum(data,d=>d.val);
   if(!total) return emptyState("📊","Nothing spent yet","Log expenses to see where the money goes.");
   const max=data[0].val||1;
-  return `<div class="catbars">${data.slice(0,8).map((d,i)=>`
-    <div class="cbrow" ${d.id?`data-catview="${d.id}" style="cursor:pointer"`:''}><span class="cbn">${d.cat.emoji} ${esc(d.cat.name)}</span>
+  return `<div class="catbars">${data.slice(0,6).map((d,i)=>`
+    <div class="cbrow"><span class="cbn">${d.cat.emoji} ${esc(d.cat.name)}</span>
     <span class="cbbar"><i style="width:${Math.max(4,Math.round(d.val/max*100))}%;background:${chartColor(i)}"></i></span>
     <span class="cbv">${money(d.val)}</span></div>`).join("")}</div>`;
 }
-function catBarsBlock(mk){return catBarsFromData(spendByCat(mk));}
 function barChart(mk){
   const days={};txInMonth(mk).forEach(t=>{const d=t.date.slice(8);if(!days[d])days[d]={inc:0,exp:0};days[d][t.type==='income'?'inc':'exp']+=+t.amount;});
   const keys=Object.keys(days).sort();
@@ -2181,50 +1469,6 @@ function yearBars(data){
   }).join("");
   return `<div style="overflow-x:auto;margin-top:10px"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="min-width:100%">${bars}</svg></div>`;
 }
-function monthShort(mk){const m=+mk.split("-")[1];return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1]||mk;}
-/* compact IDR for chart labels — rb=ribu, jt=juta, M=miliar */
-function moneyShort(n){
-  const sym=(state.settings||{}).currency||'Rp'; const v=Math.abs(+n||0); const sign=(+n||0)<0?'-':'';
-  let out;
-  if(v>=1e9) out=(v/1e9).toFixed(v>=1e10?0:1).replace(/\.0$/,'').replace('.',',')+' M';
-  else if(v>=1e6) out=(v/1e6).toFixed(v>=1e7?0:1).replace(/\.0$/,'').replace('.',',')+' jt';
-  else if(v>=1e3) out=Math.round(v/1e3)+' rb';
-  else out=String(Math.round(v));
-  return `${sign}${sym} ${out}`;
-}
-/* grouped in/out bars across N months (analytics) */
-function trendBars(data){
-  if(!data.some(d=>d.income||d.expense)) return emptyState("📈","No data yet","Add entries to see the trend.");
-  const max=Math.max(...data.map(d=>Math.max(d.income,d.expense)),1);
-  const step=Math.max(40,Math.min(56,Math.round(560/data.length))); const W=data.length*step,H=176;
-  const bars=data.map((d,i)=>{
-    const x=i*step+step*0.16;const bw=step*0.3;const ih=d.income/max*120;const eh=d.expense/max*120;
-    return `<rect x="${x}" y="${140-ih}" width="${bw}" height="${ih}" rx="3" fill="var(--good)"></rect>
-            <rect x="${x+bw+3}" y="${140-eh}" width="${bw}" height="${eh}" rx="3" fill="var(--danger)"></rect>
-            <text x="${x+bw+1.5}" y="156" font-size="9.5" text-anchor="middle" fill="var(--ink-soft)">${monthShort(d.mk)}</text>`;
-  }).join("");
-  return `<div style="overflow-x:auto;margin-top:10px"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="min-width:100%">${bars}</svg></div>
-    <div class="flex small muted" style="gap:14px;margin-top:4px"><span><span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--good)"></span> in</span><span><span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--danger)"></span> out</span></div>`;
-}
-/* simple area+line chart for a single series [{mk,bal}] */
-function lineChart(points){
-  if(!points||points.length<2) return emptyState("📉","Not enough history","Log across a few months to see the trend.");
-  const vals=points.map(p=>p.bal); const min=Math.min(...vals,0); const max=Math.max(...vals,1);
-  const span=(max-min)||1; const pad=12,H=150,base=H-30;
-  const step=Math.max(46,Math.min(70,Math.round(540/(points.length-1)))); const W=Math.max((points.length-1)*step+pad*2,220);
-  const X=i=>pad+i*((W-2*pad)/(points.length-1));
-  const Y=v=>10+(1-(v-min)/span)*(base-10);
-  const line=points.map((p,i)=>`${X(i).toFixed(1)},${Y(p.bal).toFixed(1)}`).join(" ");
-  const area=`${pad},${base} ${line} ${(W-pad).toFixed(1)},${base}`;
-  const dots=points.map((p,i)=>`<circle cx="${X(i).toFixed(1)}" cy="${Y(p.bal).toFixed(1)}" r="3" fill="var(--brand)"/>`).join("");
-  const labels=points.map((p,i)=>`<text x="${X(i).toFixed(1)}" y="${H-12}" font-size="9.5" text-anchor="middle" fill="var(--ink-soft)">${monthShort(p.mk)}</text>`).join("");
-  return `<div style="overflow-x:auto;margin-top:8px"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="min-width:100%">
-      <polygon points="${area}" fill="var(--brand-soft)" opacity=".55"></polygon>
-      <polyline points="${line}" fill="none" stroke="var(--brand)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></polyline>
-      ${dots}${labels}
-    </svg></div>
-    <div class="flex small muted" style="justify-content:space-between;margin-top:2px"><span>${monthShort(points[0].mk)}: ${moneyShort(points[0].bal)}</span><span>Now: <b style="color:var(--ink)">${moneyShort(points[points.length-1].bal)}</b></span></div>`;
-}
 
 /* ---------- Monetra-style Home blocks ---------- */
 function mcard(ico,label,val,badge){
@@ -2238,31 +1482,12 @@ function mbadge(pc,goodWhenUp){
 function homeMetrics(t,pt,balance,ytdNet){
   const pc=(cur,prev)=> (!prev ? null : Math.round((cur-prev)/Math.abs(prev)*100));
   const balBadge=`<span class="mbadge ${ytdNet>=0?'up':'down'}">${ytdNet>=0?'▲':'▼'} YTD</span>`;
-  const _today=todayISO();
-  const needPay=state.transactions.filter(x=>x.type==='expense' && (x.date||'').slice(0,10) > _today).reduce((s,x)=>s+(+x.amount||0),0);
-  const cards=[];
-  // Current balance always shows — it's the headline number and 0 is a real value.
-  cards.push(mcard('💰','Current balance',money(balance),balBadge));
-  // Only surface "need to be paid" when there is actually a future-dated expense (fixes empty "Rp" card).
-  if(needPay>0) cards.push(mcard('💸','Need to be paid',money(needPay),''));
-  // Income / expenses: show the real number; skip entirely when both are empty this month.
-  if(t.income>0||t.expense>0){
-    cards.push(mcard('📈','Income this month',money(t.income),mbadge(pc(t.income,pt.income),true)));
-    cards.push(mcard('🧾','Expenses this month',money(t.expense),mbadge(pc(t.expense,pt.expense),false)));
-  }
-  return `<div class="metrics mb">${cards.join("")}</div>`;
-}
-function accountsCard(){
-  if(!hasAccounts())return "";
-  const rows=(state.accounts||[]).map(a=>{
-    const idr=(+a.amount||0)*(a.currency==="EUR"?eurRate():1);
-    const sub=a.currency==="EUR"?`€${(+a.amount||0).toLocaleString('id-ID')} → `:"";
-    return `<button class="flex" data-acctview="${a.id}" style="width:100%;text-align:left;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer;background:none"><div>${esc(a.name)} <span class="muted" style="font-weight:400">›</span></div><div class="right">${sub}${money(idr)}</div></button>`;
-  }).join("");
-  return `<div class="card mb"><div class="flex"><h3>Accounts · real cash</h3><button class="btn sm secondary right" data-act="editAccounts">Edit</button></div>
-    <div class="mt">${rows}</div>
-    <div class="flex" style="padding-top:8px;font-weight:700"><div>Total</div><div class="right">${money(accountsTotalIDR())}</div></div>
-    <div class="small muted mt">EUR rate ${eurRate().toLocaleString('id-ID')} · tap Edit to update</div></div>`;
+  return `<div class="metrics mb">
+    ${mcard('💰','Current balance',money(balance),balBadge)}
+    ${mcard('🐷','Savings this month',money(t.net),mbadge(pc(t.net,pt.net),true))}
+    ${mcard('📈','Income this month',money(t.income),mbadge(pc(t.income,pt.income),true))}
+    ${mcard('🧾','Expenses this month',money(t.expense),mbadge(pc(t.expense,pt.expense),false))}
+  </div>`;
 }
 function homeCashflow(){
   const yr=new Date().getFullYear();
@@ -2283,41 +1508,9 @@ function afterRender(){
   $$(".catbudget").forEach(inp=>inp.addEventListener("change",e=>{
     const c=state.categories.find(x=>x.id===e.target.dataset.cat);if(c){c.budget=+e.target.value||0;touch(c);save();}
   }));
-  // Add page: type segment (in-place, keeps the amount typed), category cascade, tag chips
-  const tSeg=$("#typeSeg");
-  if(tSeg){
-    const eiF=$("#eiFields"), tfF=$("#tfFields");
-    const syncAddChild=()=>{
-      const p=$("#txCatParent"), cc=$("#txCatChild"); if(!p||!cc) return;
-      const kids=childCats(p.value);
-      cc.innerHTML=`<option value="">${kids.length?'— optional —':'— none —'}</option>`+kids.map(c=>`<option value="${c.id}">${c.emoji} ${esc(c.name)}</option>`).join("");
-      cc.disabled=!kids.length;
-    };
-    tSeg.querySelectorAll("[data-type]").forEach(b=>b.addEventListener("click",ev=>{
-      ev.stopPropagation();                 // don't let the global [data-type] handler force a full re-render
-      addType=b.dataset.type;
-      tSeg.querySelectorAll("[data-type]").forEach(x=>x.className=x.dataset.type===addType?(addType==='expense'?'on exp':addType==='income'?'on inc':'on tf'):'');
-      const isTf=addType==='transfer';
-      if(eiF)eiF.style.display=isTf?'none':'';
-      if(tfF)tfF.style.display=isTf?'':'none';
-      if(!isTf){const p=$("#txCatParent");if(p){p.innerHTML=topCats(addType).map(c=>`<option value="${c.id}">${c.emoji} ${esc(c.name)}</option>`).join("");syncAddChild();}}
-    }));
-    const apc=$("#txCatParent"); if(apc) apc.addEventListener("change",syncAddChild);
-    const asug=$("#txTagSug");
-    if(asug) asug.addEventListener("click",ev=>{
-      const b=ev.target.closest("[data-tag]"); if(!b) return;
-      ev.stopPropagation();
-      const inp=$("#txTags"); if(!inp) return;
-      const cur=inp.value.split(/[,]/).map(s=>s.trim()).filter(Boolean);
-      if(!cur.includes(b.dataset.tag)){cur.push(b.dataset.tag); inp.value=cur.join(", ");}
-      b.classList.toggle("on");
-      inp.focus();
-    });
-  }
   const ms=$("#monthSel"); if(ms) ms.addEventListener("change",e=>{window.__selMonth=e.target.value;render();});
   const ys=$("#yearSel"); if(ys) ys.addEventListener("change",e=>{window.__selYear=e.target.value;render();});
   const rseg=$("#repSeg"); if(rseg) rseg.addEventListener("click",e=>{const b=e.target.closest("[data-rep]"); if(b){window.__repView=b.dataset.rep;render();}});
-  const anaR=$("#anaRange"); if(anaR) anaR.addEventListener("click",e=>{const b=e.target.closest("[data-ana]"); if(b){window.__anaRange=+b.dataset.ana;render();}});
   // history: live filter + expandable rows
   if(route==="history"){
     const apply=()=>{
@@ -2384,7 +1577,7 @@ async function handleScanFile(file){
   st.innerHTML='<span class="scan-spin"></span> Reading your document… a few seconds.';
   try{
     const {data,mime}=await fileToScan(file);
-    const r=await fetch("/financial/api/scan",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({image:data,mime})});
+    const r=await fetch("/api/scan",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({image:data,mime})});
     const out=await r.json().catch(()=>({error:"Bad response"}));
     if(!r.ok) throw new Error(out.error||("Scan failed ("+r.status+")"));
     if(!out.items||!out.items.length){st.innerHTML='🤔 Couldn’t spot a clear payment. Try a sharper photo, or add it manually below.';return;}
@@ -2404,7 +1597,6 @@ function openScanConfirm(items){
         <div class="field" style="margin:0"><label>Amount</label><input class="samt" data-i="${i}" type="number" inputmode="decimal" value="${it.amount}"/></div>
       </div>
       <div class="row mt">
-        <div class="field" style="margin:0"><label>Add as</label><select class="sas" data-i="${i}"><option value="bill" selected>Upcoming bill</option><option value="expense">Expense now</option></select></div>
         <div class="field" style="margin:0"><label>Type</label><select class="sfreq" data-i="${i}"><option value="monthly" ${once?'':'selected'}>Monthly</option><option value="once" ${once?'selected':''}>One-time</option></select></div>
         <div class="field" style="margin:0"><label>When</label>
           <input class="sday" data-i="${i}" type="number" min="1" max="31" value="${it.dueDay||1}" placeholder="day" style="${once?'display:none':''}"/>
@@ -2413,48 +1605,33 @@ function openScanConfirm(items){
       </div>
     </div>`;
   }).join("");
-  openModal(`<h3>Found ${items.length} item${items.length>1?'s':''} 🧾</h3>
-    <p class="small muted">Check the details, choose <b>bill</b> (to pay later) or <b>expense</b> (already spent), edit anything, then add.</p>${rows}
-    <button class="btn" id="scanAdd">Add selected</button>`);
-  const syncRow=i=>{
-    const asExp=$(`#modal .sas[data-i="${i}"]`).value==="expense";
-    const once=$(`#modal .sfreq[data-i="${i}"]`).value==="once";
-    // an expense is always a one-time dated entry → force the date picker, hide monthly day
-    const freqSel=$(`#modal .sfreq[data-i="${i}"]`); freqSel.disabled=asExp;
-    const showDate=asExp||once;
-    $(`#modal .sday[data-i="${i}"]`).style.display=showDate?"none":"";
-    $(`#modal .sdate[data-i="${i}"]`).style.display=showDate?"":"none";
-  };
-  $$("#modal .sfreq").forEach(sel=>sel.addEventListener("change",e=>syncRow(e.target.dataset.i)));
-  $$("#modal .sas").forEach(sel=>sel.addEventListener("change",e=>syncRow(e.target.dataset.i)));
+  openModal(`<h3>Found ${items.length} payment${items.length>1?'s':''} 🧾</h3>
+    <p class="small muted">Check the details, edit anything that looks off, then add.</p>${rows}
+    <button class="btn" id="scanAdd">Add selected to schedule</button>`);
+  $$("#modal .sfreq").forEach(sel=>sel.addEventListener("change",e=>{
+    const i=e.target.dataset.i,once=e.target.value==="once";
+    $(`#modal .sday[data-i="${i}"]`).style.display=once?"none":"";
+    $(`#modal .sdate[data-i="${i}"]`).style.display=once?"":"none";
+  }));
   $("#scanAdd").onclick=()=>{
-    let bills=0,exps=0;
+    let added=0;
     $$("#modal .sck").forEach(ck=>{
       if(!ck.checked)return;const i=ck.dataset.i;
       const name=$(`#modal .sname[data-i="${i}"]`).value.trim();
       const amount=+$(`#modal .samt[data-i="${i}"]`).value;
+      const freq=$(`#modal .sfreq[data-i="${i}"]`).value;
       if(!name||!amount)return;
-      const as=$(`#modal .sas[data-i="${i}"]`).value;
-      if(as==="expense"){
-        // log as an expense transaction (category "Other"; no bank-account link → balance untouched, editable later)
-        const date=($(`#modal .sfreq[data-i="${i}"]`).value==="once"?$(`#modal .sdate[data-i="${i}"]`).value:"")||todayISO();
-        state.transactions.push({id:uid(),date,type:"expense",amount,catId:"other",note:name,tags:[],_m:stampNow()});
-        exps++;
-      }else{
-        const freq=$(`#modal .sfreq[data-i="${i}"]`).value;
-        const bill={id:uid(),name,amount,freq,paid:{},_m:stampNow()};
-        if(freq==="once"){bill.dueDate=$(`#modal .sdate[data-i="${i}"]`).value||todayISO();bill.paidOnce=false;}
-        else{bill.dueDay=clamp(+$(`#modal .sday[data-i="${i}"]`).value||1,1,31);}
-        state.bills.push(bill);bills++;
-      }
+      const bill={id:uid(),name,amount,freq,paid:{},_m:Date.now()};
+      if(freq==="once"){bill.dueDate=$(`#modal .sdate[data-i="${i}"]`).value||todayISO();bill.paidOnce=false;}
+      else{bill.dueDay=clamp(+$(`#modal .sday[data-i="${i}"]`).value||1,1,31);}
+      state.bills.push(bill);added++;
     });
-    save();closeModal();render();
-    toast(`${bills?bills+" bill"+(bills>1?"s":""):""}${bills&&exps?" · ":""}${exps?exps+" expense"+(exps>1?"s":""):""} added ✓`.trim()||"Nothing added");
+    save();closeModal();render();toast(added+" added to schedule ✓");
   };
 }
 
 document.addEventListener("click",e=>{
-  const t=e.target.closest("[data-go],[data-act],[data-modal],[data-more],[data-type],[data-freq],[data-edittx],[data-delbill],[data-paybill],[data-unpaybill],[data-delgoal],[data-addsave],[data-deldebt],[data-addpay],[data-delcat],[data-catview],[data-villaview],[data-acctview],[data-addcattx],[data-delvilla],[data-delinv],[data-villaio],[data-invrepay],[data-furnpay],[data-furnstatus],[data-delfurn]");
+  const t=e.target.closest("[data-go],[data-act],[data-modal],[data-more],[data-type],[data-freq],[data-edittx],[data-delbill],[data-paybill],[data-unpaybill],[data-delgoal],[data-addsave],[data-deldebt],[data-addpay],[data-delcat],[data-catview],[data-addcattx],[data-delvilla],[data-delinv],[data-villaio],[data-invrepay],[data-furnpay],[data-furnstatus],[data-delfurn]");
   if(!t) return;
   const d=t.dataset;
   if(d.go){go(d.go);return;}
@@ -2470,7 +1647,7 @@ document.addEventListener("click",e=>{
   if(d.addsave){addToGoal(d.addsave);return;}
   if(d.deldebt){tomb(d.deldebt);state.debts=state.debts.filter(x=>x.id!==d.deldebt);save();render();return;}
   if(d.addpay){logPayment(d.addpay);return;}
-  if(d.delcat){catDelete(d.delcat);return;}
+  if(d.delcat){tomb(d.delcat);state.categories=state.categories.filter(x=>x.id!==d.delcat);save();render();return;}
   if(d.delvilla){tomb(d.delvilla);state.villas=state.villas.filter(x=>x.id!==d.delvilla);save();render();return;}
   if(d.delinv){tomb(d.delinv);state.investors=state.investors.filter(x=>x.id!==d.delinv);save();render();return;}
   if(d.villaio){villaEntry(d.villaio);return;}
@@ -2479,46 +1656,16 @@ document.addEventListener("click",e=>{
   if(d.furnstatus){furnCycleStatus(d.furnstatus);return;}
   if(d.delfurn){tomb(d.delfurn);state.furniture=state.furniture.filter(x=>x.id!==d.delfurn);save();render();toast("Deleted");return;}
   if(d.catview){selCat=d.catview;go("catview");return;}
-  if(d.villaview){selVilla=d.villaview;go("villaview");return;}
-  if(d.acctview){selAcct=d.acctview;go("acctview");return;}
   if(d.addcattx){addCatTx(d.addcattx);return;}
   if(d.act){ACTIONS[d.act]&&ACTIONS[d.act]();return;}
 });
 
 const ACTIONS={
   dismissWelcome(){state.onboarded=true;save();render();},
-  editAccounts(){
-    const accs=state.accounts||[];
-    const rows=accs.map(a=>`<div class="field"><label>${esc(a.name)} ${a.currency==='EUR'?'(EUR)':'(Rp)'}</label><input class="acc-amt" data-id="${a.id}" type="number" inputmode="decimal" value="${+a.amount||0}"/></div>`).join("");
-    openModal(`<h3>Edit account balances</h3>${rows}<div class="field"><label>EUR → Rp rate</label><input id="accEur" type="number" inputmode="decimal" value="${eurRate()}"/></div><button class="btn" id="accSave">Save</button>`);
-    $("#accSave").onclick=()=>{
-      document.querySelectorAll(".acc-amt").forEach(inp=>{const a=(state.accounts||[]).find(x=>x.id===inp.dataset.id);if(a){a.amount=+inp.value||0;a._m=stampNow();}});
-      state.settings.eurRate=+$("#accEur").value||20382; state.settings._m=stampNow();
-      save();closeModal();render();toast("Balances updated ✓");
-    };
-  },
   addTx(){
     const amt=+$("#amt").value;if(!amt||amt<=0)return toast("Enter an amount");
-    const date=$("#date").value||todayISO();
-    const villaId=($("#txVilla")?$("#txVilla").value:"")||"";
-    const tags=[...new Set((($("#txTags")?$("#txTags").value:"")||"").split(/[,\s]+/).map(s=>s.trim()).filter(Boolean))];
-    const note=$("#note")?$("#note").value.trim():"";
-    if(addType==="transfer"){
-      const from=$("#txFrom")?$("#txFrom").value:"";
-      const to=$("#txTo")?$("#txTo").value:"";
-      if(!from||!to)return toast("Pick both accounts");
-      if(from===to)return toast("Pick two different accounts");
-      state.transactions.push({id:uid(),date,type:"transfer",amount:amt,acctId:from,toAcctId:to,villaId,tags,note,_m:stampNow()});
-      applyTransfer(from,to,amt,1);
-      save();render();toast("Transfer logged ✓");
-      return;
-    }
-    const catId=($("#txCatChild")&&$("#txCatChild").value)||($("#txCatParent")?$("#txCatParent").value:"")||"";
-    const acctId=$("#txAcct")?$("#txAcct").value:"";
-    const bank=($("#txBank")?$("#txBank").value.trim():"")||"";
-    state.transactions.push({id:uid(),date,type:addType,amount:amt,catId,acctId,villaId,tags,bank,note,_m:stampNow()});
-    acctDelta(acctId,addType,amt,1);
-    save();render();toast(acctId?"Added · balance updated ✓":"Added ✓");
+    state.transactions.push({id:uid(),date:$("#date").value||todayISO(),type:addType,amount:amt,catId:$("#cat").value,villaId:($("#txVilla")?$("#txVilla").value:"")||"",bank:($("#txBank")?$("#txBank").value.trim():"")||"",note:$("#note").value.trim(),_m:Date.now()});
+    save();render();toast("Added ✓");
   },
   repeatLastMonth(){
     const months=[...new Set(state.transactions.map(t=>monthKey(t.date)))].sort();
@@ -2530,7 +1677,7 @@ const ACTIONS={
     openModal(`<h3>Repeat ${monthName(prev)}? 🔁</h3><p class="small muted">This copies all ${src.length} ${src.length===1?'entry':'entries'} from ${monthName(prev)} into ${monthName(cur)}, same day each. You can edit any of them after.</p><button class="btn" id="repOk">Copy ${src.length} into ${monthName(cur)}</button>`);
     $("#repOk").onclick=()=>{
       const [cy,cm]=cur.split("-");
-      src.forEach(t=>{const day=t.date.slice(8,10);const nt={id:uid(),date:`${cy}-${cm}-${day}`,type:t.type,amount:+t.amount,catId:t.catId,acctId:t.acctId||"",toAcctId:t.toAcctId||"",villaId:t.villaId||"",tags:(t.tags||[]).slice(),note:t.note||"",_m:stampNow()};state.transactions.push(nt);if(nt.type==='transfer')applyTransfer(nt.acctId,nt.toAcctId,nt.amount,1);else acctDelta(nt.acctId,nt.type,nt.amount,1);});
+      src.forEach(t=>{const day=t.date.slice(8,10);state.transactions.push({id:uid(),date:`${cy}-${cm}-${day}`,type:t.type,amount:+t.amount,catId:t.catId,villaId:t.villaId||"",note:t.note||"",_m:Date.now()});});
       save();closeModal();render();toast(`Copied ${src.length} into ${monthName(cur)} ✓`);
     };
   },
@@ -2770,21 +1917,11 @@ function applyTheme(){
   const dark=state.settings.theme==="dark";
   document.documentElement.setAttribute("data-theme",dark?"dark":"light");
   const tb=$("#themeBtn");if(tb)tb.textContent=dark?"☀️":"🌙";
-  const meta=document.querySelector('meta[name=theme-color]');if(meta)meta.content=dark?"#15161A":"#EE853F";
+  const meta=document.querySelector('meta[name=theme-color]');if(meta)meta.content=dark?"#16140F":"#0F6E56";
 }
 $("#themeBtn").addEventListener("click",()=>{state.settings.theme=state.settings.theme==="dark"?"light":"dark";state.settings._m=Date.now();save();applyTheme();});
 $("#quickAdd").addEventListener("click",()=>go("add"));
 $("#moreBtn").addEventListener("click",openMore);
-/* Force a fresh pull from the cloud (cloud wins) — kills any stale local copy */
-$("#syncBtn").addEventListener("click",async()=>{
-  const b=$("#syncBtn"); b.textContent="⏳";
-  try{
-    const r=await fetch(CLOUD,{headers:{"x-sd-token":CLOUD_TOKEN},cache:"no-store"});
-    if(r.ok){ const d=await r.json(); if(d&&d.state){ state=normCur({...freshState(),...d.state}); saveLocalOnly(); applyTheme(); render(); toast("Synced from cloud ✓"); } else toast("Sync failed"); }
-    else toast("Sync failed");
-  }catch(e){ toast("Sync failed — check connection"); }
-  b.textContent="↻";
-});
 
 /* ---------- Helpers ---------- */
 function esc(s){return (s==null?"":String(s)).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));}

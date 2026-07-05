@@ -1,5 +1,5 @@
 /* SlowDough service worker — network-first for fresh updates, cache fallback for offline */
-const CACHE = "financial-tvm-v16";
+const CACHE = "financial-tvm-v27";
 const ASSETS = ["./", "./index.html", "./manifest.json"];
 
 self.addEventListener("install", (e) => {

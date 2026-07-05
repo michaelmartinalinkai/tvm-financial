@@ -1,0 +1,1140 @@
+{
+  "state": {
+    "onboarded": true,
+    "settings": {
+      "name": "TVM",
+      "currency": "Rp",
+      "currencyPos": "before",
+      "monthlyIncome": 0,
+      "theme": "light",
+      "_m": 1782553795817
+    },
+    "categories": [
+      {
+        "id": "living_food",
+        "name": "Living & Food",
+        "emoji": "\ud83c\udf5c",
+        "budget": 0,
+        "type": "expense",
+        "_m": 1782536686223
+      },
+      {
+        "id": "staff",
+        "name": "Staff Salaries",
+        "emoji": "\ud83d\udc77",
+        "budget": 0,
+        "type": "expense",
+        "_m": 1782536686223
+      },
+      {
+        "id": "utilities",
+        "name": "Utilities",
+        "emoji": "\ud83d\udca1",
+        "budget": 0,
+        "type": "expense",
+        "_m": 1782536686223
+      },
+      {
+        "id": "community",
+        "name": "Community & Charity",
+        "emoji": "\ud83e\udd1d",
+        "budget": 0,
+        "type": "expense",
+        "_m": 1782536686223
+      },
+      {
+        "id": "household",
+        "name": "Household & Maintenance",
+        "emoji": "\ud83d\udee0\ufe0f",
+        "budget": 0,
+        "type": "expense",
+        "_m": 1782536686223
+      },
+      {
+        "id": "family",
+        "name": "Personal",
+        "emoji": "\ud83e\udd0d",
+        "budget": 0,
+        "type": "expense",
+        "_m": 1782714150000
+      },
+      {
+        "id": "debt",
+        "name": "Debt Repayment",
+        "emoji": "\ud83d\udcb3",
+        "budget": 0,
+        "type": "expense",
+        "_m": 1782536686223
+      },
+      {
+        "id": "cls",
+        "name": "CLS",
+        "emoji": "\ud83d\udd04",
+        "type": "income",
+        "_m": 1782567599521
+      },
+      {
+        "id": "rental",
+        "name": "Villa Rental",
+        "emoji": "\ud83c\udfe0",
+        "budget": 0,
+        "type": "income",
+        "_m": 1782536686223
+      },
+      {
+        "id": "pakoki",
+        "name": "Pak Oki",
+        "emoji": "\ud83e\uddfe",
+        "type": "expense",
+        "budget": 0,
+        "target": 1790000000,
+        "_m": 1782536686223
+      },
+      {
+        "id": "mitch",
+        "name": "Mitch (client)",
+        "emoji": "\ud83d\udcc4",
+        "type": "income",
+        "budget": 0,
+        "target": 222000,
+        "cur": "AUD",
+        "_m": 1782536686223
+      },
+      {
+        "id": "villacost",
+        "name": "Villa Cost",
+        "type": "expense",
+        "_m": 1782554200033,
+        "emoji": "\ud83d\udee0\ufe0f"
+      },
+      {
+        "id": "sadakah",
+        "name": "Sadakah",
+        "type": "expense",
+        "emoji": "\ud83e\udd32",
+        "_m": 1782554249632
+      }
+    ],
+    "transactions": [
+      {
+        "id": "x001",
+        "date": "2026-04-01",
+        "type": "expense",
+        "amount": 5000000,
+        "catId": "household",
+        "note": "Lourinka maintenance & renovation"
+      },
+      {
+        "id": "x002",
+        "date": "2026-04-01",
+        "type": "expense",
+        "amount": 30000000,
+        "catId": "living_food",
+        "note": "Food & Personal"
+      },
+      {
+        "id": "x003",
+        "date": "2026-04-01",
+        "type": "expense",
+        "amount": 26000000,
+        "catId": "staff",
+        "note": "Staff salary"
+      },
+      {
+        "id": "x004",
+        "date": "2026-04-01",
+        "type": "expense",
+        "amount": 4000000,
+        "catId": "staff",
+        "note": "Pool guy salary"
+      },
+      {
+        "id": "x005",
+        "date": "2026-04-01",
+        "type": "expense",
+        "amount": 2000000,
+        "catId": "villacost",
+        "note": "Banjar (community dues)",
+        "_m": 1782554249632
+      },
+      {
+        "id": "x006",
+        "date": "2026-04-01",
+        "type": "expense",
+        "amount": 2000000,
+        "catId": "utilities",
+        "note": "Sampah (waste)"
+      },
+      {
+        "id": "x007",
+        "date": "2026-05-01",
+        "type": "expense",
+        "amount": 20000000,
+        "catId": "living_food",
+        "note": "Food & Personal"
+      },
+      {
+        "id": "x008",
+        "date": "2026-05-01",
+        "type": "expense",
+        "amount": 26000000,
+        "catId": "staff",
+        "note": "Staff salary"
+      },
+      {
+        "id": "x009",
+        "date": "2026-05-01",
+        "type": "expense",
+        "amount": 4000000,
+        "catId": "staff",
+        "note": "Pool guy salary"
+      },
+      {
+        "id": "x010",
+        "date": "2026-05-01",
+        "type": "expense",
+        "amount": 3000000,
+        "catId": "villacost",
+        "note": "Banjar (community dues)",
+        "_m": 1782554249632
+      },
+      {
+        "id": "x011",
+        "date": "2026-05-01",
+        "type": "expense",
+        "amount": 3000000,
+        "catId": "utilities",
+        "note": "Sampah (waste)"
+      },
+      {
+        "id": "x012",
+        "date": "2026-05-23",
+        "type": "expense",
+        "amount": 85500000,
+        "catId": "debt",
+        "note": "Paid Peter debt"
+      },
+      {
+        "id": "x014",
+        "date": "2026-05-23",
+        "type": "expense",
+        "amount": 4000000,
+        "catId": "staff",
+        "note": "Pool guy salary"
+      },
+      {
+        "id": "x015",
+        "date": "2026-05-23",
+        "type": "expense",
+        "amount": 1798200,
+        "catId": "utilities",
+        "note": "Lysa internet"
+      },
+      {
+        "id": "x016",
+        "date": "2026-05-23",
+        "type": "expense",
+        "amount": 10000000,
+        "catId": "living_food",
+        "note": "Food & Personal"
+      },
+      {
+        "id": "x017",
+        "date": "2026-05-23",
+        "type": "expense",
+        "amount": 3720000,
+        "catId": "utilities",
+        "note": "Laundry - all villa"
+      },
+      {
+        "id": "x018",
+        "date": "2026-05-24",
+        "type": "expense",
+        "amount": 770000,
+        "catId": "utilities",
+        "note": "Laundry - Sempol"
+      },
+      {
+        "id": "x019",
+        "date": "2026-05-26",
+        "type": "expense",
+        "amount": 5000000,
+        "catId": "debt",
+        "note": "Paid credit card"
+      },
+      {
+        "id": "x020",
+        "date": "2026-05-26",
+        "type": "expense",
+        "amount": 1798200,
+        "catId": "utilities",
+        "note": "Internet - LUNA (6 months)"
+      },
+      {
+        "id": "x021",
+        "date": "2026-05-27",
+        "type": "expense",
+        "amount": 2000000,
+        "catId": "sadakah",
+        "note": "Sadakah (charity)",
+        "_m": 1782554249632
+      },
+      {
+        "id": "x022",
+        "date": "2026-05-27",
+        "type": "expense",
+        "amount": 178431200,
+        "catId": "debt",
+        "note": "Paid Sof debt (10K USDT)"
+      },
+      {
+        "id": "x023",
+        "date": "2026-06-01",
+        "type": "expense",
+        "amount": 10192308,
+        "catId": "staff",
+        "note": "Syifa salary"
+      },
+      {
+        "id": "x024",
+        "date": "2026-06-13",
+        "type": "expense",
+        "amount": 50000000,
+        "catId": "cls",
+        "note": "Paid Pak Oki for CLS"
+      },
+      {
+        "id": "x025",
+        "date": "2026-06-13",
+        "type": "expense",
+        "amount": 100000000,
+        "catId": "cls",
+        "note": "Paid Pak Oki for CLS"
+      },
+      {
+        "id": "x028",
+        "date": "2026-06-04",
+        "type": "income",
+        "amount": 216400000,
+        "catId": "rental",
+        "note": "Villa LUNA - 1 year rent"
+      },
+      {
+        "id": "seed_pakoki_0",
+        "date": "2026-06-04",
+        "type": "expense",
+        "amount": 100000000,
+        "catId": "pakoki",
+        "note": "Payment to Pak Oki"
+      },
+      {
+        "id": "seed_pakoki_1",
+        "date": "2026-06-12",
+        "type": "expense",
+        "amount": 100000000,
+        "catId": "pakoki",
+        "note": "Payment to Pak Oki"
+      },
+      {
+        "id": "seed_pakoki_2",
+        "date": "2026-06-12",
+        "type": "expense",
+        "amount": 50000000,
+        "catId": "pakoki",
+        "note": "Payment to Pak Oki"
+      },
+      {
+        "id": "seed_pakoki_3",
+        "date": "2026-06-13",
+        "type": "expense",
+        "amount": 36000000,
+        "catId": "pakoki",
+        "note": "Payment to Pak Oki"
+      },
+      {
+        "id": "seed_pakoki_4",
+        "date": "2026-06-13",
+        "type": "expense",
+        "amount": 179570000,
+        "catId": "pakoki",
+        "note": "Payment to Pak Oki"
+      },
+      {
+        "id": "seed_pakoki_5",
+        "date": "2026-06-24",
+        "type": "expense",
+        "amount": 200000000,
+        "catId": "pakoki",
+        "note": "Payment to Pak Oki"
+      },
+      {
+        "id": "seed_pakoki_6",
+        "date": "2026-06-24",
+        "type": "expense",
+        "amount": 124430000,
+        "catId": "pakoki",
+        "note": "Payment to Pak Oki"
+      },
+      {
+        "id": "seed_pakoki_7",
+        "date": "2026-06-26",
+        "type": "expense",
+        "amount": 27835648,
+        "catId": "pakoki",
+        "note": "Payment to Pak Oki"
+      },
+      {
+        "id": "seed_mitch_0",
+        "date": "2026-05-23",
+        "type": "income",
+        "amount": 72000,
+        "catId": "mitch",
+        "note": "Payment received"
+      },
+      {
+        "id": "seed_mitch_1",
+        "date": "2026-06-13",
+        "type": "income",
+        "amount": 75000,
+        "catId": "mitch",
+        "note": "Payment received"
+      },
+      {
+        "id": "adq38sb0ww",
+        "date": "2026-06-26",
+        "type": "expense",
+        "amount": 12600000,
+        "catId": "debt",
+        "note": "Refund Deposit Ocean Drive Villa 3"
+      },
+      {
+        "id": "clsmqw6lei1a",
+        "date": "2026-06-27",
+        "type": "income",
+        "amount": 945040000,
+        "catId": "cls",
+        "villaId": "v8c3",
+        "note": "CLS net to TVM (client 222K AUD minus owner payout)",
+        "_m": 1782555044986
+      },
+      {
+        "id": "adjmqw6wacr",
+        "date": "2026-03-25",
+        "type": "income",
+        "amount": 29588680,
+        "catId": "rental",
+        "villaId": "padj",
+        "note": "Income from Adjuna - to Bank Permata",
+        "_m": 1782555319446
+      },
+      {
+        "id": "jx001",
+        "date": "2026-05-21",
+        "type": "expense",
+        "amount": 44225500,
+        "catId": "villacost",
+        "note": "Carlos - Modena appliances Villa 2",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx002",
+        "date": "2026-06-11",
+        "type": "expense",
+        "amount": 80506500,
+        "catId": "villacost",
+        "note": "Carlos - DP Villa 1 & 3 cabinet",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx003",
+        "date": "2026-06-25",
+        "type": "expense",
+        "amount": 8683230,
+        "catId": "villacost",
+        "note": "Carlos - DP kaca 2 villa",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx004",
+        "date": "2026-06-03",
+        "type": "expense",
+        "amount": 9849000,
+        "catId": "villacost",
+        "note": "Sempol - AC 2PK + installation",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx005",
+        "date": "2026-06-03",
+        "type": "expense",
+        "amount": 11218000,
+        "catId": "villacost",
+        "note": "Sempol - DP kaca Sempol",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx006",
+        "date": "2026-06-05",
+        "type": "expense",
+        "amount": 5069000,
+        "catId": "villacost",
+        "note": "Sempol - Pembayaran 1 kaca Sempol",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx007",
+        "date": "2026-06-07",
+        "type": "expense",
+        "amount": 11218000,
+        "catId": "villacost",
+        "note": "Sempol - Doors remaining 50%",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx008",
+        "date": "2026-06-11",
+        "type": "expense",
+        "amount": 5609000,
+        "catId": "villacost",
+        "note": "Sempol - Pelunasan pintu kaca Sempol",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx009",
+        "date": "2026-06-11",
+        "type": "expense",
+        "amount": 2300000,
+        "catId": "villacost",
+        "note": "Sempol - Trash",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx010",
+        "date": "2026-06-18",
+        "type": "expense",
+        "amount": 1051344,
+        "catId": "villacost",
+        "note": "Sempol - Pompa",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx011",
+        "date": "2026-06-10",
+        "type": "expense",
+        "amount": 4791120,
+        "catId": "villacost",
+        "note": "Sempol - Other payments (17 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx012",
+        "date": "2026-06-07",
+        "type": "expense",
+        "amount": 47000000,
+        "catId": "family",
+        "note": "Personal - Afni implant (2 teeth)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx013",
+        "date": "2026-05-30",
+        "type": "expense",
+        "amount": 10600000,
+        "catId": "staff",
+        "note": "Management - Syifa salary",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx014",
+        "date": "2026-06-01",
+        "type": "expense",
+        "amount": 3619048,
+        "catId": "staff",
+        "note": "Management - Payrol Komang",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx015",
+        "date": "2026-06-01",
+        "type": "expense",
+        "amount": 2690485,
+        "catId": "staff",
+        "note": "Management - Payrol Tude",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx016",
+        "date": "2026-06-18",
+        "type": "expense",
+        "amount": 3500000,
+        "catId": "villacost",
+        "note": "Management - PC table and chair",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx017",
+        "date": "2026-06-19",
+        "type": "expense",
+        "amount": 1799500,
+        "catId": "villacost",
+        "note": "Management - Other payments (6 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx018",
+        "date": "2026-05-29",
+        "type": "expense",
+        "amount": 7965020,
+        "catId": "villacost",
+        "note": "Kong - DP mirror",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx019",
+        "date": "2026-06-26",
+        "type": "expense",
+        "amount": 9500000,
+        "catId": "villacost",
+        "note": "Kong - DP glass door",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx020",
+        "date": "2026-06-23",
+        "type": "expense",
+        "amount": 4000000,
+        "catId": "villacost",
+        "note": "Adjuna - Pelunasan curtain",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx021",
+        "date": "2026-06-25",
+        "type": "expense",
+        "amount": 10072000,
+        "catId": "villacost",
+        "note": "Adjuna - DP cushion",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx022",
+        "date": "2026-06-10",
+        "type": "expense",
+        "amount": 1150000,
+        "catId": "villacost",
+        "note": "Adjuna - Other payments (3 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx023",
+        "date": "2026-06-04",
+        "type": "expense",
+        "amount": 14000000,
+        "catId": "villacost",
+        "note": "CLS - Deposit notaris (CLS signature)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx024",
+        "date": "2026-05-28",
+        "type": "expense",
+        "amount": 2211040,
+        "catId": "villacost",
+        "note": "Padonan Sikhou - Kitchen set kabinet",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx025",
+        "date": "2026-05-31",
+        "type": "expense",
+        "amount": 3000000,
+        "catId": "villacost",
+        "note": "Padonan Sikhou - Glass door remaining payment",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx026",
+        "date": "2026-05-31",
+        "type": "expense",
+        "amount": 1080000,
+        "catId": "staff",
+        "note": "Padonan Sikhou - Payroll Muhson",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx027",
+        "date": "2026-06-06",
+        "type": "expense",
+        "amount": 1036252,
+        "catId": "villacost",
+        "note": "Padonan Sikhou - Stop keran + pompa",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx028",
+        "date": "2026-06-08",
+        "type": "expense",
+        "amount": 1468000,
+        "catId": "staff",
+        "note": "Padonan Sikhou - Payroll Muhson",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx029",
+        "date": "2026-06-15",
+        "type": "expense",
+        "amount": 1439000,
+        "catId": "staff",
+        "note": "Padonan Sikhou - Payroll Muhson",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx030",
+        "date": "2026-06-19",
+        "type": "expense",
+        "amount": 1120000,
+        "catId": "staff",
+        "note": "Padonan Sikhou - Payroll Muhson",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx031",
+        "date": "2026-06-11",
+        "type": "expense",
+        "amount": 2099400,
+        "catId": "villacost",
+        "note": "Padonan Sikhou - Other payments (12 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx032",
+        "date": "2026-06-27",
+        "type": "expense",
+        "amount": 10000000,
+        "catId": "villacost",
+        "note": "CHB - DP / Deposit villa",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx033",
+        "date": "2026-05-29",
+        "type": "expense",
+        "amount": 9000000,
+        "catId": "villacost",
+        "note": "Lian - Payment to Lian",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx034",
+        "date": "2026-06-01",
+        "type": "expense",
+        "amount": 852750,
+        "catId": "villacost",
+        "note": "Lian - Other payments (3 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx035",
+        "date": "2026-06-04",
+        "type": "expense",
+        "amount": 3300000,
+        "catId": "villacost",
+        "note": "Luna - TV for villa",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx036",
+        "date": "2026-06-04",
+        "type": "expense",
+        "amount": 3264500,
+        "catId": "villacost",
+        "note": "Luna - Other payments (12 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx037",
+        "date": "2026-06-12",
+        "type": "expense",
+        "amount": 1799000,
+        "catId": "villacost",
+        "note": "Lourinka - Cushion case",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx038",
+        "date": "2026-06-12",
+        "type": "expense",
+        "amount": 4369750,
+        "catId": "villacost",
+        "note": "Lourinka - Other payments (18 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx039",
+        "date": "2026-06-12",
+        "type": "expense",
+        "amount": 2656000,
+        "catId": "villacost",
+        "note": "Alysaa - Other payments (13 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx040",
+        "date": "2026-06-02",
+        "type": "expense",
+        "amount": 1800000,
+        "catId": "villacost",
+        "note": "Ann - Other payments (4 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx041",
+        "date": "2026-06-02",
+        "type": "expense",
+        "amount": 1800000,
+        "catId": "villacost",
+        "note": "Diane - Other payments (4 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx042",
+        "date": "2026-06-01",
+        "type": "expense",
+        "amount": 1000000,
+        "catId": "villacost",
+        "note": "Lysa - Other payments (2 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "jx043",
+        "date": "2026-06-02",
+        "type": "expense",
+        "amount": 900000,
+        "catId": "villacost",
+        "note": "Nissa - Other payments (2 below Rp 1M)",
+        "_m": 1782624785561
+      },
+      {
+        "id": "mxuhz8rv6g",
+        "date": "2026-06-01",
+        "type": "expense",
+        "amount": 6500000,
+        "catId": "staff",
+        "villaId": "",
+        "bank": "BCA",
+        "note": "Pool guy salary",
+        "_m": 1782712876696
+      },
+      {
+        "id": "tx_koen_20260611",
+        "date": "2026-06-11",
+        "type": "expense",
+        "amount": 27000000,
+        "catId": "debt",
+        "note": "Paid Koen (1500 USDT)",
+        "_m": 1782713023000
+      },
+      {
+        "id": "eb3hwbk0d6",
+        "date": "2026-06-06",
+        "type": "expense",
+        "amount": 50000000,
+        "catId": "family",
+        "villaId": "",
+        "bank": "BCA",
+        "note": "Personal",
+        "_m": 1782742043418
+      },
+      {
+        "id": "gwlm6lvq48",
+        "date": "2026-06-27",
+        "type": "expense",
+        "amount": 5000000,
+        "catId": "debt",
+        "villaId": "",
+        "bank": "BCA",
+        "note": "Refund Deposit Ocean Drive Villa 6",
+        "_m": 1782742123448
+      }
+    ],
+    "bills": [],
+    "goals": [],
+    "debts": [],
+    "villas": [
+      {
+        "id": "v1l2",
+        "name": "Lourinka",
+        "emoji": "\ud83c\udfe0",
+        "income": 0,
+        "expense": 0,
+        "code": "V1L2",
+        "status": "Owned",
+        "owner": "TVM",
+        "note": "Paid off, owned by TVM.",
+        "_m": 1782538625891
+      },
+      {
+        "id": "v4l2",
+        "name": "Luna",
+        "emoji": "\ud83c\udfe0",
+        "income": 0,
+        "expense": 0,
+        "code": "V4L2",
+        "status": "Lease-out",
+        "owner": "TVM",
+        "note": "Lease-out. Rent IDR 216.400.000/yr (1-yr leasehold). Term 4 Jun 2026 to 4 Jun 2027. Full payment upfront on check-in (by 12:00 on 4 Jun 2026). Security deposit IDR 21.640.000 (10% of rent, incl. DP converted to deposit). Owner-payment part of IDR 365M (V4+V5+V6) due 1 Jul.",
+        "_m": 1782714481000,
+        "rentYear": 216400000,
+        "leaseStart": "2026-06-04",
+        "leaseEnd": "2027-06-04",
+        "deposit": 21640000,
+        "paymentTerms": "Full rent upfront on check-in, in lessor account by 12:00 on 4 Jun 2026"
+      },
+      {
+        "id": "v7l2",
+        "name": "Lysa",
+        "emoji": "\ud83c\udfe0",
+        "income": 0,
+        "expense": 0,
+        "code": "V7L2",
+        "status": "Owned",
+        "owner": "TVM 50% + Sikhou 50%",
+        "note": "Lease 2022-2032, 1.26B total. Paid 600M, outstanding 660M.",
+        "_m": 1782538625891
+      },
+      {
+        "id": "v8c3",
+        "name": "Berawa CLS",
+        "emoji": "\ud83c\udfe0",
+        "income": 0,
+        "expense": 0,
+        "code": "V8C3",
+        "status": "Lease-out",
+        "owner": "TVM",
+        "note": "Tenant Mitchell Ross West. 18y lease from Nov 2027.",
+        "_m": 1782538625891
+      },
+      {
+        "id": "v9p2",
+        "name": "Padonan",
+        "emoji": "\ud83c\udfe0",
+        "income": 0,
+        "expense": 0,
+        "code": "V9P2",
+        "status": "Owned",
+        "owner": "TVM 50% + Sikhou 50%",
+        "note": "Paid off. Sikhou exit pending.",
+        "_m": 1782538625891
+      },
+      {
+        "id": "v10s3",
+        "name": "Sempol",
+        "emoji": "\ud83c\udfe0",
+        "income": 0,
+        "expense": 0,
+        "code": "V10S3",
+        "status": "Lease-out",
+        "owner": "TVM 50% + Perry 50%",
+        "note": "Annual rent 185M. Tenant Ryan (period ended). Paid 1.24B, outstanding 610M.",
+        "_m": 1782538625891,
+        "rentYear": 185000000
+      },
+      {
+        "id": "padj",
+        "name": "Adjuna",
+        "emoji": "\ud83d\udee0\ufe0f",
+        "income": 0,
+        "expense": 0,
+        "_m": 1782555319446
+      },
+      {
+        "id": "pcar",
+        "name": "Carlos",
+        "emoji": "\ud83d\udee0\ufe0f",
+        "income": 0,
+        "expense": 0,
+        "_m": 1782555319446
+      },
+      {
+        "id": "pkong",
+        "name": "Kong",
+        "emoji": "\ud83d\udee0\ufe0f",
+        "income": 0,
+        "expense": 0,
+        "_m": 1782555319446
+      },
+      {
+        "id": "psikh",
+        "name": "Padonan / Sikhou",
+        "emoji": "\ud83d\udee0\ufe0f",
+        "income": 0,
+        "expense": 0,
+        "_m": 1782555319446
+      },
+      {
+        "id": "vann",
+        "name": "Ann",
+        "emoji": "\ud83c\udfe0",
+        "income": 0,
+        "expense": 0,
+        "code": "ANN",
+        "status": "Lease-out",
+        "owner": "TVM",
+        "rentYear": 252000000,
+        "rentMonth": 21000000,
+        "leaseStart": "2026-04-03",
+        "leaseEnd": "2027-04-03",
+        "deposit": 21000000,
+        "paymentTerms": "Rent IDR 21M/mo x12 = IDR 252M (365 nights). Stages: IDR 42M on 3 Apr 2026 (2mo) + IDR 42M 5 weeks after + monthly for remaining 8 months. Deposit IDR 21M total: 15M on 10 Apr 2026 + 6M before the 2nd 2-month payment.",
+        "note": "Lease-out, 1-yr (3 Apr 2026 to 3 Apr 2027), rent IDR 21M/mo (IDR 252M/yr). EARLY TERMINATION: guest paid 2 months rent (IDR 42M) + IDR 15M deposit (of 21M; 6M never paid), then cancelling and moving out after 2 months. Per contract, early cancellation = deposit NOT refundable, so TVM keeps the IDR 15M (no payback). Total received from guest: IDR 57M.",
+        "_m": 1782715357000,
+        "depositPaid": 15000000,
+        "depositRefundable": false
+      }
+    ],
+    "investors": [],
+    "furniture": [
+      {
+        "id": "f50b70",
+        "project": "Padonan / Sikhou",
+        "item": "Other payments (under Rp 2M)",
+        "cost": 7283652,
+        "paid": 7283652,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "f50b71",
+        "project": "Padonan / Sikhou",
+        "item": "Kitchen set kabinet",
+        "cost": 2211040,
+        "paid": 2211040,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "f50b72",
+        "project": "Padonan / Sikhou",
+        "item": "Glass door remaining payment",
+        "cost": 3000000,
+        "paid": 3000000,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "f50b78",
+        "project": "Carlos",
+        "item": "Modena appliances Villa 2",
+        "cost": 44225500,
+        "paid": 44225500,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "f50b79",
+        "project": "Carlos",
+        "item": "DP kaca 2 villa",
+        "cost": 8683230,
+        "paid": 8683230,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "f50b710",
+        "project": "Kong",
+        "item": "DP mirror",
+        "cost": 7965020,
+        "paid": 7965020,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "f50b711",
+        "project": "Kong",
+        "item": "DP glass door Kong",
+        "cost": 9500000,
+        "paid": 9500000,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "f50b712",
+        "project": "Adjuna",
+        "item": "Other payments (under Rp 2M)",
+        "cost": 1150000,
+        "paid": 1150000,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "f50b713",
+        "project": "Adjuna",
+        "item": "Pelunasan curtain",
+        "cost": 4000000,
+        "paid": 4000000,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "f50b714",
+        "project": "Adjuna",
+        "item": "DP cushion",
+        "cost": 10072000,
+        "paid": 10072000,
+        "status": "Delivered",
+        "_m": 1782553470418
+      },
+      {
+        "id": "fmqw6urvj",
+        "project": "Padonan / Sikhou",
+        "item": "All payment & needs",
+        "cost": 10000000,
+        "paid": 10000000,
+        "status": "Delivered",
+        "_m": 1782554381983
+      }
+    ],
+    "project": null,
+    "_del": {
+      "groceries": 1782536686223,
+      "dining": 1782536686223,
+      "transport": 1782536686223,
+      "housing": 1782536686223,
+      "health": 1782536686223,
+      "fun": 1782536686223,
+      "shopping": 1782536686223,
+      "savings": 1782536686223,
+      "other": 1782536686223,
+      "salary": 1782536686223,
+      "side": 1782536686223,
+      "gift": 1782536686223,
+      "furniture": 1782539153102,
+      "x026": 1782553236078,
+      "v2d2": 1782553850753,
+      "v3a2": 1782553850753,
+      "v5a3": 1782553850753,
+      "v6n3": 1782553850753,
+      "ownerpayout": 1782554200033,
+      "x013": 1782554381983,
+      "clsmqw6lei1b": 1782555044986,
+      "vcmqw6jdz50": 1782624785561,
+      "vcmqw6jdz51": 1782624785561,
+      "vcmqw6jdz52": 1782624785561,
+      "vcmqw6jdz53": 1782624785561,
+      "vcmqw6jdz54": 1782624785561,
+      "vcmqw6jdz55": 1782624785561,
+      "vcmqw6jdz56": 1782624785561,
+      "vcmqw6jdz57": 1782624785561,
+      "vcmqw6jdz58": 1782624785561,
+      "vcmqw6jdz59": 1782624785561,
+      "vcmqw6jdz510": 1782624785561,
+      "vcmqw6jdz511": 1782624785561,
+      "vcmqw6jdz512": 1782624785561,
+      "vcmqw6jdz513": 1782624785561,
+      "vcmqw6jdz514": 1782624785561,
+      "vcmqw6jdz515": 1782624785561,
+      "vcmqw6jdz516": 1782624785561
+    }
+  },
+  "ts": 1782742640531
+}

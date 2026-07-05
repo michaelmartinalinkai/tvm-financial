@@ -689,9 +689,6 @@ function Home(){
   const pT=periodTotals(today,today), pW=periodTotals(isoAddDays(today,-6),today), pM={income:t.income,expense:t.expense}, pY=ytdTotals(yr);
   const nAcc=(state.accounts||[]).length, nVilla=(state.villas||[]).length;
   const as=assetSummary();
-  const bal=allTimeTotals(); const balance=hasAccounts()?accountsTotalIDR():(bal.income-bal.expense);
-  const needPay=needToPayTotal();
-  const futureInc=futureIncomeTotal();
   const epcard=(ic,label,range,p)=>`<div class="ez-pcard">
     <div class="ep-h">${ic} ${label}</div><div class="ep-d">${range}</div>
     <div class="ep-row"><span class="k"><span class="ep-dot i"></span>Income</span><span class="ep-in">${moneyShort(p.income)}</span></div>
@@ -702,18 +699,18 @@ function Home(){
   ${!state.onboarded?welcomeCard():""}
   <div class="ez-topgrid">
     <div class="ez-expcard">
-      <div class="ez-doodle">💰</div>
-      <div class="ez-mlabel">Total balance <small>all accounts</small></div>
-      <div class="ez-mbig">${money(balance)}</div>
-      <div class="ez-msub">Income this month <b>${money(t.income)}</b> · Spent ${money(t.expense)}</div>
+      <div class="ez-doodle">✏️</div>
+      <div class="ez-mlabel">${monthName(mk)} <small>Expense</small></div>
+      <div class="ez-mbig">${money(t.expense)}</div>
+      <div class="ez-msub">Income this month <b>${money(t.income)}</b> · Net ${money(t.net)}</div>
       <button class="btn sm" data-go="history">View details →</button>
     </div>
     <div class="card ez-asset">
-      <div class="ez-a-h">Summary</div>
+      <div class="ez-a-h">Asset Summary</div>
       <div class="ez-a-sub">You have ${nAcc} account${nAcc===1?'':'s'}${nVilla?` · ${nVilla} villa${nVilla===1?'':'s'}`:''}</div>
       <div class="ez-a-row"><div class="ez-a-ic">🏦</div><div class="ez-a-l">Total assets</div><div class="ez-a-v pos">${money(as.assets)}</div></div>
-      <div class="ez-a-row"><div class="ez-a-ic">📈</div><div class="ez-a-l">Total future income</div><div class="ez-a-v ${futureInc>0?'pos':''}">${money(futureInc)}</div></div>
-      <div class="ez-a-row"><div class="ez-a-ic">💸</div><div class="ez-a-l">Need to be paid</div><div class="ez-a-v" style="color:var(--warn)">${money(needPay)}</div></div>
+      <div class="ez-a-row"><div class="ez-a-ic">💳</div><div class="ez-a-l">Total liabilities</div><div class="ez-a-v ${as.liabilities>0?'neg':''}">${money(as.liabilities)}</div></div>
+      <div class="ez-a-row"><div class="ez-a-ic">💰</div><div class="ez-a-l">Net assets</div><div class="ez-a-v ${as.net<0?'neg':''}">${money(as.net)}</div></div>
     </div>
   </div>
   <div class="ez-periods">
@@ -730,11 +727,6 @@ function Home(){
     <div class="flex"><h3>Recent transactions</h3><button class="btn sm secondary right" data-go="add">Add +</button></div>
     <div class="list mt">${recent.length?recent.map(txRow).join(""):emptyState("🧺","No entries yet","Tap Add to log your first one.")}</div>
   </div>`;
-}
-/* expected incoming money = income transactions dated in the future (e.g. villa rent due later this month) */
-function futureIncomeTotal(){
-  const today=todayISO();
-  return (state.transactions||[]).filter(x=>x.type==="income"&&(x.date||"").slice(0,10)>today).reduce((a,x)=>a+(+x.amount||0),0);
 }
 function needToPayTotal(){
   const today=todayISO();
@@ -2404,7 +2396,6 @@ function openScanConfirm(items){
         <div class="field" style="margin:0"><label>Amount</label><input class="samt" data-i="${i}" type="number" inputmode="decimal" value="${it.amount}"/></div>
       </div>
       <div class="row mt">
-        <div class="field" style="margin:0"><label>Add as</label><select class="sas" data-i="${i}"><option value="bill" selected>Upcoming bill</option><option value="expense">Expense now</option></select></div>
         <div class="field" style="margin:0"><label>Type</label><select class="sfreq" data-i="${i}"><option value="monthly" ${once?'':'selected'}>Monthly</option><option value="once" ${once?'selected':''}>One-time</option></select></div>
         <div class="field" style="margin:0"><label>When</label>
           <input class="sday" data-i="${i}" type="number" min="1" max="31" value="${it.dueDay||1}" placeholder="day" style="${once?'display:none':''}"/>
@@ -2413,43 +2404,28 @@ function openScanConfirm(items){
       </div>
     </div>`;
   }).join("");
-  openModal(`<h3>Found ${items.length} item${items.length>1?'s':''} 🧾</h3>
-    <p class="small muted">Check the details, choose <b>bill</b> (to pay later) or <b>expense</b> (already spent), edit anything, then add.</p>${rows}
-    <button class="btn" id="scanAdd">Add selected</button>`);
-  const syncRow=i=>{
-    const asExp=$(`#modal .sas[data-i="${i}"]`).value==="expense";
-    const once=$(`#modal .sfreq[data-i="${i}"]`).value==="once";
-    // an expense is always a one-time dated entry → force the date picker, hide monthly day
-    const freqSel=$(`#modal .sfreq[data-i="${i}"]`); freqSel.disabled=asExp;
-    const showDate=asExp||once;
-    $(`#modal .sday[data-i="${i}"]`).style.display=showDate?"none":"";
-    $(`#modal .sdate[data-i="${i}"]`).style.display=showDate?"":"none";
-  };
-  $$("#modal .sfreq").forEach(sel=>sel.addEventListener("change",e=>syncRow(e.target.dataset.i)));
-  $$("#modal .sas").forEach(sel=>sel.addEventListener("change",e=>syncRow(e.target.dataset.i)));
+  openModal(`<h3>Found ${items.length} payment${items.length>1?'s':''} 🧾</h3>
+    <p class="small muted">Check the details, edit anything that looks off, then add.</p>${rows}
+    <button class="btn" id="scanAdd">Add selected to schedule</button>`);
+  $$("#modal .sfreq").forEach(sel=>sel.addEventListener("change",e=>{
+    const i=e.target.dataset.i,once=e.target.value==="once";
+    $(`#modal .sday[data-i="${i}"]`).style.display=once?"none":"";
+    $(`#modal .sdate[data-i="${i}"]`).style.display=once?"":"none";
+  }));
   $("#scanAdd").onclick=()=>{
-    let bills=0,exps=0;
+    let added=0;
     $$("#modal .sck").forEach(ck=>{
       if(!ck.checked)return;const i=ck.dataset.i;
       const name=$(`#modal .sname[data-i="${i}"]`).value.trim();
       const amount=+$(`#modal .samt[data-i="${i}"]`).value;
+      const freq=$(`#modal .sfreq[data-i="${i}"]`).value;
       if(!name||!amount)return;
-      const as=$(`#modal .sas[data-i="${i}"]`).value;
-      if(as==="expense"){
-        // log as an expense transaction (category "Other"; no bank-account link → balance untouched, editable later)
-        const date=($(`#modal .sfreq[data-i="${i}"]`).value==="once"?$(`#modal .sdate[data-i="${i}"]`).value:"")||todayISO();
-        state.transactions.push({id:uid(),date,type:"expense",amount,catId:"other",note:name,tags:[],_m:stampNow()});
-        exps++;
-      }else{
-        const freq=$(`#modal .sfreq[data-i="${i}"]`).value;
-        const bill={id:uid(),name,amount,freq,paid:{},_m:stampNow()};
-        if(freq==="once"){bill.dueDate=$(`#modal .sdate[data-i="${i}"]`).value||todayISO();bill.paidOnce=false;}
-        else{bill.dueDay=clamp(+$(`#modal .sday[data-i="${i}"]`).value||1,1,31);}
-        state.bills.push(bill);bills++;
-      }
+      const bill={id:uid(),name,amount,freq,paid:{},_m:Date.now()};
+      if(freq==="once"){bill.dueDate=$(`#modal .sdate[data-i="${i}"]`).value||todayISO();bill.paidOnce=false;}
+      else{bill.dueDay=clamp(+$(`#modal .sday[data-i="${i}"]`).value||1,1,31);}
+      state.bills.push(bill);added++;
     });
-    save();closeModal();render();
-    toast(`${bills?bills+" bill"+(bills>1?"s":""):""}${bills&&exps?" · ":""}${exps?exps+" expense"+(exps>1?"s":""):""} added ✓`.trim()||"Nothing added");
+    save();closeModal();render();toast(added+" added to schedule ✓");
   };
 }
 
